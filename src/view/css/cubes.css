@@ -1,0 +1,50 @@
+.column {
+	float: left;
+}
+
+.box {
+	border: #000000 solid 2px;
+	display: inline-block;
+}
+
+.large {
+	height: 600px;
+	width: 600px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.small {
+	height: 200px;
+	width: 200px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+button {
+	margin: 20px;
+	height: 40px;
+	width: 95%;
+}
+
+.glow {
+	-webkit-box-shadow:0 0 15px yellow; 
+	-moz-box-shadow: 0 0 15px yellow; 
+	box-shadow:0 0 15px yellow; 
+}
