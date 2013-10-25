@@ -12,7 +12,7 @@ var cubes = (function($) {
 				{					
 					$(buttons[model.data[index-1]-1]).removeClass("glow")
 				}
-				$(buttons[model.data[index]-1]).addClass("glow")
+				$(buttons[model.data[index]-1]).addClass("glow");
 				box.removeClass();
 				box.addClass("box large "+classes[2]);
 				setTimeout(control.sequence, 1000, index+1)
