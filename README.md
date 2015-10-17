@@ -1,20 +1,17 @@
-# [ngBoilerplate](http://joshdmiller.github.com/ng-boilerplate) [![Build Status](https://api.travis-ci.org/ngbp/ngbp.png?branch=v0.3.2-release)](https://travis-ci.org/ngbp/ngbp)
+# [Yet Another Angular Seed](https://github.com/New-Edge-Engineering/yet-another-angularjs-seed)
 
 An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
-
-***
 
 ## Quick Start
 
 Install Node.js and then:
 
 ```sh
-$ git clone git://github.com/joshdmiller/ng-boilerplate
-$ cd ng-boilerplate
+$ git clone git://github.com/New-Edge-Engineering/yet-another-angularjs-seed
+$ cd yet-another-angularjs-seed
 $ sudo npm -g install grunt-cli karma bower
 $ npm install
-$ bower install
-$ grunt watch
+$ npm start
 ```
 
 Finally, open `file:///path/to/ng-boilerplate/build/index.html` in your browser.
