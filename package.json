@@ -1,16 +1,13 @@
 {
-  "author": "Josh David Miller",
-  "name": "ngbp",
-  "version": "0.3.2",
-  "homepage": "https://github.com/ngbp/ngbp",
-  "licenses": {
-    "type": "MIT",
-    "url": "https://raw.github.com/ngbp/ngbp/master/LICENSE"
-  },
-  "bugs": "https://github.com/ngbp/ngbp/issues",
+  "author": "Matthew Green",
+  "name": "yet-another-angularjs-seed",
+  "version": "0.0.0",
+  "homepage": "https://github.com/New-Edge-Engineering/yet-another-angularjs-seed",
+  "license": "MIT",
+  "bugs": "https://github.com/New-Edge-Engineering/yet-another-angularjs-seed/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ngbp/ngbp.git"
+    "url": "git@github.com:New-Edge-Engineering/yet-another-angularjs-seed.git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -33,5 +30,12 @@
     "grunt-karma": "^0.8.2",
     "karma-coffee-preprocessor": "^0.2.1",
     "karma": "^0.12.9"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "pretest": "npm install",
+    "test": "grunt karma",
+    "prestart": "npm install",
+    "start": "grunt watch"
   }
 }

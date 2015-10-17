@@ -4,3 +4,7 @@ build/
 bin/
 node_modules/
 vendor/
+
+# Eclipse files and folders
+.project
+.settings
