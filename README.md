@@ -374,3 +374,13 @@ of you!
 
 So join the team! We're good people.
 
+
+# Reference
+
+* https://github.com/ngbp/ngbp
+* http://eddify.me/posts/better-grunt-files-for-organised-developers.html
+* http://rhumaric.com/2013/07/renewing-the-grunt-livereload-magic/
+* https://github.com/mknabe/angular-testing-starter
+
+
+
