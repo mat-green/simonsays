@@ -368,8 +368,14 @@ module.exports = function ( grunt ) {
       build: {
         dir: '<%= build_dir %>',
         src: [
-          '<%= vendor_files.js %>',
-          '<%= build_dir %>/**/*.js',
+          /* '<%= index_vendor_js_files() %>', */
+          'build/www/vendor/angular/angular.js',
+          'build/www/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          'build/www/vendor/angular-ui-router/release/angular-ui-router.js',
+          'build/www/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
+          '<%= build_dir %>/app/**/*.js',
+          '<%= build_dir %>/common/**/*.js',
+          '<%= build_dir %>/www/**/*.js',
           '<%= html2js.common.dest %>',
           '<%= html2js.app.dest %>',
           '<%= vendor_files.css %>',
@@ -398,9 +404,13 @@ module.exports = function ( grunt ) {
      */
     karmaconfig: {
       unit: {
-        dir: '<%= build_dir %>/../',
+        dir: '<%= build_dir %>/../../',
         src: [
-          '<%= vendor_files.js %>',
+          /* '<%= vendor_files.js %>', */
+          'build/www/vendor/angular/angular.js',
+          'build/www/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+          'build/www/vendor/angular-ui-router/release/angular-ui-router.js',
+          'build/www/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
           '<%= html2js.app.dest %>',
           '<%= html2js.common.dest %>',
           '<%= test_files.js %>'
@@ -528,6 +538,16 @@ module.exports = function ( grunt ) {
           livereload: false
         }
       }
+    },
+    index_vendor_js_files: function() {
+        var result = [];
+        var vendor_files = grunt.config.get('vendor_files');
+        var build_dir = grunt.config.get('build_dir');
+        for(var file in vendor_files.js) {
+            result[result.length] = build_dir + '/' + vendor_files.js[file];
+        }
+        grunt.log.write("vendor files: " + result + "\n");
+        return result.toString();
     }
   };
 
