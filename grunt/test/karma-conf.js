@@ -3,7 +3,7 @@ module.exports = function(config) {
         //  root path location that will be used to resolve all relative paths in files and exclude sections
         basePath : '../../',
 
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
 
         // files to include, ordered by dependencies
         files : [
