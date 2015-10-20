@@ -8,7 +8,7 @@ module.exports = function (grunt) {
             'build/api'
         ],
         reports: [
-            'build/test/coverage/'
+            'build/reports'
         ]
     });
 

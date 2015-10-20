@@ -71,13 +71,13 @@ module.exports = function(config) {
             // type of file to output, use text to output to console
             type : 'cobertura',
             // directory where coverage results are saved
-            dir : 'build/test-results/',
+            dir : 'build/reports/',
             subdir: 'coverage',
             // if type is text or text-summary, you can set the file name
-            file: 'coverage.xml'
+            file: 'cobertura.xml'
         },
         junitReporter : {
-            outputDir: 'build/test-results/',
+            outputDir: 'build/reports/tests/',
             outputFile: 'junit.xml',
             suite: ''
         }
