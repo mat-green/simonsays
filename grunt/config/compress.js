@@ -3,7 +3,7 @@ module.exports = function (grunt) {
         main: {
             options: {
                 mode: 'tgz',
-                archive: 'build/package.tar.gz'
+                archive: 'build/<%= pkg.name %>-<%= pkg.version %>.tar.gz'
             },
             files: [
                 {
