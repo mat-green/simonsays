@@ -4,7 +4,7 @@ exports.config = {
 
   // location of E2E test specs
   specs: [
-    '../../test/e2e/*.js'
+    '../../src/scenarios/*.js'
   ],
 
   // configure multiple browsers to run tests
