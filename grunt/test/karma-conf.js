@@ -48,37 +48,38 @@ module.exports = function(config) {
             // 'app/partials/*.html': 'html2js'
 
             // test coverage
-            'build/www/app/**/*.js' : ['jshint', 'coverage'],
-            'build/www/common/**/*.js' : ['jshint', 'coverage']
+            'build/www/app/**/*.js' : ['coverage'],
+            'build/www/common/**/*.js' : [ 'coverage'],
+            '**/*.coffee': ['coffee'],
         },
 
-        reporters : ['progress', 'coverage'],
+        reporters : ['dots', 'progress', 'junit', 'coverage'],
 
         // list of karma plugins
         plugins : [
-            'karma-jshint-preprocessor',
+            'karma-coffee-preprocessor',
             'karma-coverage',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-ng-html2js-preprocessor',
+            'karma-junit-reporter',
             'karma-phantomjs-launcher'
         ],
 
         // plugin settings
-        ngHtml2JsPreprocessor : {
-            stripPrefix : 'build/www/'
-        },
         coverageReporter : {
             // type of file to output, use text to output to console
-            type : 'text',
+            type : 'cobertura',
             // directory where coverage results are saved
-            dir : 'build/test-results/coverage/'
+            dir : 'build/reports/',
+            subdir: 'coverage',
             // if type is text or text-summary, you can set the file name
-            // file: 'coverage.txt'
+            file: 'cobertura.xml'
         },
         junitReporter : {
-            outputFile : 'build/test-results/junit-results.xml'
+            outputDir: 'build/reports/tests/',
+            outputFile: 'junit.xml',
+            suite: ''
         }
     });
 };

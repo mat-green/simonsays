@@ -3,19 +3,12 @@ module.exports = function (grunt) {
         main: {
             options: {
                 mode: 'tgz',
-                archive: 'dist/package.tar.gz'
+                archive: 'build/package.tar.gz'
             },
             files: [
                 {
                     src: [
-                        'config/**',
-                        'api/**',
-                        'bin/**',
-                        'bootstrap/**',
-                        'node_modules/**',
-                        'Gruntfile.js',
-                        'package.json',
-                        'server.js'
+                        'build/dist/**'
                     ]
                 }
             ]

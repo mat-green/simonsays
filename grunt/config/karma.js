@@ -8,10 +8,14 @@ module.exports = function(grunt) {
             configFile : 'grunt/test/karma-conf.js'
         },
         unit : {
-            singleRun : true
+            options : {
+                singleRun : true
+            }
         },
         continuous : {
-            background : true
+            options : {
+                background : true
+            }
         }
     });
 
