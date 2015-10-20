@@ -1,11 +1,13 @@
 module.exports = function (grunt) {
 
     /*
-     * The default task is to build and compile.
+     * The default task is to package the web application for deployment
      */
-    grunt.registerTask( 'default', 'Build an application archive for deployment.', [
-        'build',
-        'compile'
+    grunt.registerTask( 'package', 'Build an application archive for deployment.', [
+        'clean:src',
+        'clean:docs',
+        'clean:reports',
+        'distribute'
     ]);
 
 };

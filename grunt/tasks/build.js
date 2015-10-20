@@ -4,7 +4,6 @@ module.exports = function (grunt) {
      * The `build` task gets your app ready to run for development and testing.
      */
     grunt.registerTask( 'build', [
-        'clean',
         'html2js',
         'jshint',
         'coffeelint',
@@ -15,9 +14,7 @@ module.exports = function (grunt) {
         'copy:build_vendor_assets',
         'copy:build_appjs',
         'copy:build_vendorjs',
-        'index:build',
-        'karmaconfig',
-        'karma:continuous'
+        'index:build'
     ]);
 
 };
