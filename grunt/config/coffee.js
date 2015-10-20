@@ -13,9 +13,9 @@ module.exports = function (grunt) {
           bare: true
         },
         expand: true,
-        cwd: '.',
-        src: [ '<%= app_files.coffee %>' ],
-        dest: '<%= build_dir %>',
+        cwd: 'src',
+        src: [ '<%= files.app.coffee %>' ],
+        dest: '<%= files.develop_dir %>',
         ext: '.js'
       }
     });

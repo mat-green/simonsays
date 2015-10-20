@@ -1,14 +1,17 @@
 module.exports = function (grunt) {
     grunt.config.set('clean', {
         src: [
-          '<%= build_dir %>',
-          '<%= compile_dir %>'
+          '<%= files.develop_dir %>',
+          '<%= files.compile_dir %>'
         ],
         docs: [
-            'build/api'
+            '<%= files.docs_dir %>'
         ],
         reports: [
-            'build/reports'
+            '<%= files.reports_dir %>'
+        ],
+        packages: [
+            '<%= files.build_dir %>/*.tar.gz'
         ]
     });
 
