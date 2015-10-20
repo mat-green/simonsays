@@ -50,7 +50,10 @@ module.exports = function (grunt) {
       compile_assets: {
         files: [
           {
-            src: [ '**', '!**/README.md' ],
+            src: [
+                '**',
+                '!**/README.md',
+            ],
             dest: 'build/dist/',
             cwd: 'src/assets',
             expand: true
