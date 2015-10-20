@@ -9,9 +9,9 @@ module.exports = function (grunt) {
       build_app_assets: {
         files: [
           {
-            src: [ '**' ],
-            dest: '<%= build_dir %>/',
-            cwd: 'src/www',
+            src: [ '**', '!**/README.md' ],
+            dest: 'build/www/',
+            cwd: 'src/assets',
             expand: true
           }
        ]
@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         files: [
           {
             src: [ '<%= vendor_files.assets %>' ],
-            dest: '<%= build_dir %>/',
+            dest: 'build/www/',
             cwd: 'src',
             expand: true,
             flatten: true
@@ -31,17 +31,17 @@ module.exports = function (grunt) {
         files: [
           {
             src: [ '<%= app_files.js %>' ],
-            dest: '<%= build_dir %>/',
+            dest: 'build/www/',
             cwd: 'src',
             expand: true
           }
         ]
       },
-      build_vendorjs: {
+      build_vendor_js: {
         files: [
           {
             src: [ '<%= vendor_files.js %>' ],
-            dest: '<%= build_dir %>/',
+            dest: 'build/www/',
             cwd: 'src',
             expand: true
           }
@@ -50,9 +50,9 @@ module.exports = function (grunt) {
       compile_assets: {
         files: [
           {
-            src: [ '**' ],
-            dest: '<%= compile_dir %>/www',
-            cwd: '<%= build_dir %>/www',
+            src: [ '**', '!**/README.md' ],
+            dest: 'build/dist/',
+            cwd: 'src/assets',
             expand: true
           }
         ]

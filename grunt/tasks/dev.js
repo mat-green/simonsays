@@ -9,6 +9,7 @@ module.exports = function (grunt) {
         'clean:reports',
         'build',
         'karma:continuous:start',
+        'protractor:continuous',
         'run:mock_server',
         'connect:livereload',
         'watch:karma'
