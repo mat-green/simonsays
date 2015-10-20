@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         'protractor:continuous',
         'run:mock_server',
         'connect:livereload',
-        'watch:karma'
+        'watch'
     ]);
 
 };
