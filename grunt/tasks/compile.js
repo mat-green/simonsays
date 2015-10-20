@@ -9,8 +9,7 @@ module.exports = function (grunt) {
     'copy:compile_assets',
     'concat:compile_js',
     'uglify',
-    'index:compile',
-    'compress'
+    'index:compile'
   ]);
 
 };
