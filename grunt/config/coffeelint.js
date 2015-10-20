@@ -8,12 +8,12 @@ module.exports = function (grunt) {
     grunt.config.set('coffeelint', {
       src: {
         files: {
-          src: [ '<%= app_files.coffee %>' ]
+          src: [ '<%= files.app.coffee %>' ]
         }
       },
       test: {
         files: {
-          src: [ '<%= app_files.coffeeunit %>' ]
+          src: [ '<%= files.app.coffeeunit %>' ]
         }
       }
     });
