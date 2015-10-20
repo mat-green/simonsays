@@ -7,7 +7,7 @@ module.exports = function (grunt) {
         docs: [
             'build/api'
         ],
-        coverage: [
+        reports: [
             'build/test/coverage/'
         ]
     });
