@@ -7,8 +7,8 @@ module.exports = function (grunt) {
   grunt.registerTask( 'distribute', [
     'clean',
     'build',
-    'test',
     'compile',
+    'test',
     'compress'
   ]);
 

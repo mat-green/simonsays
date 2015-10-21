@@ -27,7 +27,7 @@ module.exports = function(grunt) {
          */
         app: {
             js : [ '<%= files.src_dir %>/app/**/*.js', '<%= files.src_dir %>/common/**/*.js', '<%= files.src_dir %>/assets/**/*.js', '!<%= files.src_dir %>/**/*.spec.js' ],
-            jsunit : ['<%= src_dir %>/app/**/*.spec.js'],
+            jsunit : ['<%= files.src_dir %>/app/**/*.spec.js'],
 
             coffee : ['<%= files.src_dir %>/app/**/*.coffee', '<%= files.src_dir %>/common/**/*.coffee', '!<%= files.src_dir %>/**/*.spec.coffee'],
             coffeeunit : ['<%= files.src_dir %>/app/**/*.spec.coffee'],
