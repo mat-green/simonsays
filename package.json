@@ -51,7 +51,7 @@
     "pretest": "npm install",
     "test": "grunt karma",
     "prestart": "npm install",
-    "start": "grunt --verbose --debug dev",
+    "start": "grunt dev",
     "prebuild": "npm install",
     "build": "grunt build",
     "prepackage": "npm install",

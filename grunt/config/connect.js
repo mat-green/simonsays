@@ -6,7 +6,7 @@ module.exports = function(grunt) {
             port : 9000,
             hostname : 'localhost'
         },
-        livereload : {
+        continuous : {
             options : {
                 livereload : 35729,
                 open : true,
@@ -14,9 +14,9 @@ module.exports = function(grunt) {
 
             }
         },
-        test : {
+        compile : {
             options : {
-                base : ['<%= files.develop_dir %>']
+                base : ['<%= files.compile_dir %>']
             }
         }
     });
