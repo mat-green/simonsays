@@ -25,9 +25,9 @@ module.exports = function(grunt) {
                 'src/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
                 'src/vendor/angular-ui-router/release/angular-ui-router.js',
                 'src/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
-                'src/grunt/module.prefix',
+                'grunt/templates/module.prefix',
                 'build/www/**/*.js',
-                'src/grunt/module.suffix'
+                'grunt/templates/module.suffix'
             ],
             dest : '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.js'
         }

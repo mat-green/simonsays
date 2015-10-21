@@ -67,7 +67,7 @@ This will do everything needed and place our built code inside a folder called
 so it can re-build our site on-the-fly:
 
 ```sh
-$ grunt watch
+$ grunt dev
 ```
 
 The built files will be in `build/`. See the main [README](README.md) for more
