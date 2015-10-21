@@ -33,7 +33,7 @@ module.exports = function(grunt) {
             return file.replace(dirRE, '');
         });
 
-        grunt.file.copy('src/templates/index.html.tpl', this.data.dir + '/index.html', {
+        grunt.file.copy('src/templates/index.html', this.data.dir + '/index.html', {
             process : function(contents, path) {
                 return grunt.template.process(contents, {
                     data : {

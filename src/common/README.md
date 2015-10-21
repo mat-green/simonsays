@@ -13,8 +13,8 @@ handle components that do not meet this pattern.
 
 ```
 src/
-  |- common/
-  |  |- plusOne/
+  +- common/
+     +- plusOne/
 ```
 
 - `plusOne` - a simple directive to load a Google +1 Button on an element.
