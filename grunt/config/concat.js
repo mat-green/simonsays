@@ -9,8 +9,8 @@ module.exports = function(grunt) {
          * together.
          */
         build_css : {
-            src : ['<%= vendor_files.css %>', '<%= build_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'],
-            dest : '<%= build_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+            src : ['<%= files.vendor.css %>', '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'],
+            dest : '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
         },
         /**
          * The `compile_js` target is the concatenation of our application source
@@ -21,15 +21,12 @@ module.exports = function(grunt) {
                 banner : '<%= meta.banner %>'
             },
             src : [
-                'src/vendor/angular/angular.js',
-                'src/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-                'src/vendor/angular-ui-router/release/angular-ui-router.js',
-                'src/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
+                '<%= files.vendor.js %>',
                 'grunt/templates/module.prefix',
-                'build/www/**/*.js',
+                '<%= files.compile_dir %>/**/*.js',
                 'grunt/templates/module.suffix'
             ],
-            dest : '<%= compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.js'
+            dest : '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.js'
         }
     });
 

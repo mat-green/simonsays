@@ -3,12 +3,12 @@ module.exports = function (grunt) {
         main: {
             options: {
                 mode: 'tgz',
-                archive: 'build/<%= pkg.name %>-<%= pkg.version %>.tar.gz'
+                archive: '<%= files.build_dir %>/<%= pkg.name %>-<%= pkg.version %>.tar.gz'
             },
             files: [
                 {
                     src: [
-                        'build/dist/**'
+                        '<%= files.compile_dir %>/**'
                     ]
                 }
             ]
