@@ -130,7 +130,8 @@ learn more.
   components into the `src/vendor/` directory.
 * `bower.json` - this is our project configuration for Bower and it contains the
   list of Bower dependencies we need.
-* `Gruntfile.js` - the univeral build script; [Read more &raquo;](grunt/README.md)
+* `Gruntfile.js` - the univeral build script that pulls in all the files within 
+  `grunt/config/` and `grunt/tasks'. [Read more &raquo;](grunt/README.md)
 - `package.json` - metadata about the app, used by NPM and our build script. Our
   NPM dependencies are listed here.
 
