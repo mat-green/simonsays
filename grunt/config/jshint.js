@@ -10,13 +10,14 @@ module.exports = function (grunt) {
      */
     grunt.config.set('jshint', {
       src: [
-        '<%= app_files.js %>'
+        '<%= files.app.js %>'
       ],
       test: [
-        '<%= app_files.jsunit %>'
+        '<%= files.app.jsunit %>'
       ],
       gruntfile: [
-        'Gruntfile.js'
+        'Gruntfile.js',
+        'grunt/**/*.js'
       ],
       options: {
         curly: true,

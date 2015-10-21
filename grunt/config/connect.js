@@ -10,13 +10,13 @@ module.exports = function(grunt) {
             options : {
                 livereload : 35729,
                 open : true,
-                base : ['build/www']
+                base : ['<%= files.develop_dir %>']
 
             }
         },
         test : {
             options : {
-                base : ['build/www']
+                base : ['<%= files.develop_dir %>']
             }
         }
     });

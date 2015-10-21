@@ -6,7 +6,7 @@ module.exports = function(grunt) {
                 wait : false
             },
             args : []
-            // args: ['app/mockApi/apiserver.js']
+            // args: ['<%= files.src_dir %>/mock/apiserver.js']
         }
     });
 

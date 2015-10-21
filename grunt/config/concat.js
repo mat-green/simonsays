@@ -9,8 +9,11 @@ module.exports = function(grunt) {
          * together.
          */
         build_css : {
-            src : ['<%= files.vendor.css %>', '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'],
-            dest : '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+            src : [
+                '<%= files.vendor.css %>',
+                '<%= files.develop_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+            ],
+            dest : '<%= files.develop_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
         },
         /**
          * The `compile_js` target is the concatenation of our application source
@@ -23,7 +26,10 @@ module.exports = function(grunt) {
             src : [
                 '<%= files.vendor.js %>',
                 'grunt/templates/module.prefix',
-                '<%= files.compile_dir %>/**/*.js',
+                '<%= files.develop_dir %>/app/**/*.js',
+                '<%= files.develop_dir %>/common/**/*.js',
+                '<%= html2js.app.dest %>',
+                '<%= html2js.common.dest %>',
                 'grunt/templates/module.suffix'
             ],
             dest : '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.js'

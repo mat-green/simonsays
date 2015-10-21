@@ -16,7 +16,7 @@ module.exports = function(grunt) {
          * your Gruntfile changes, it will automatically be reloaded!
          */
         gruntfile : {
-            files : [ 'Gruntfile.js', 'grunt/**/*.*' ],
+            files : [ 'Gruntfile.js', 'grunt/**/*.js' ],
             tasks : ['jshint:gruntfile'],
             options : {
                 livereload : false
@@ -28,8 +28,8 @@ module.exports = function(grunt) {
          * run our unit tests.
          */
         jssrc : {
-            files : ['<%= app_files.js %>'],
-            tasks : ['jshint:src', 'karma:unit:run', 'copy:build_appjs']
+            files : [ '<%= files.app.js %>' ],
+            tasks : ['jshint:src', 'karma:unit:run', 'ngAnnotate']
         },
 
         /**
@@ -37,8 +37,8 @@ module.exports = function(grunt) {
          * run our unit tests.
          */
         coffeesrc : {
-            files : ['<%= app_files.coffee %>'],
-            tasks : ['coffeelint:src', 'coffee:source', 'karma:unit:run', 'copy:build_appjs']
+            files : ['<%= files.app.coffee %>'],
+            tasks : ['coffeelint:src', 'coffee:source', 'karma:unit:run', 'ngAnnotate']
         },
 
         /**
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
          * files, so this is probably not very useful.
          */
         assets : {
-            files : ['src/assets/**/*'],
+            files : ['<%= files.src_assets_dir %>/**/*'],
             tasks : ['copy:build_app_assets', 'copy:build_vendor_assets']
         },
 
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
          * When index.html changes, we need to compile it.
          */
         html : {
-            files : ['<%= app_files.html %>'],
+            files : ['<%= files.app.html %>'],
             tasks : ['index:build']
         },
 
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
          * When our templates change, we only rewrite the template cache.
          */
         tpls : {
-            files : ['<%= app_files.atpl %>', '<%= app_files.ctpl %>'],
+            files : ['<%= files.app.atpl %>', '<%= files.app.ctpl %>'],
             tasks : ['html2js']
         },
 
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
          * run the unit tests. We don't want to do any live reloading.
          */
         jsunit : {
-            files : ['<%= app_files.jsunit %>'],
+            files : ['<%= files.app.jsunit %>'],
             tasks : ['jshint:test', 'karma:unit:run'],
             options : {
                 livereload : false
@@ -91,15 +91,15 @@ module.exports = function(grunt) {
          * run the unit tests. We don't want to do any live reloading.
          */
         coffeeunit : {
-            files : ['<%= app_files.coffeeunit %>'],
-            tasks : ['coffeelint:test', 'karma:unit:run'],
+            files : ['<%= files.app.coffeeunit %>'],
+            tasks : ['coffeelint:test', 'karma:unit:run']
         },
         karma : {
-            files : ['build/www/app/**/*.js', 'build/www/common/**/*.js', 'src/**/*.spec.js'],
+            files : ['<%= files.develop_dir %>/app/**/*.js', '<%= files.develop_dir %>/common/**/*.js', 'src/**/*.spec.js'],
             tasks : ['karma:continuous:run']
         },
         protractor : {
-            files : ['build/www/app/**/*.js', 'build/www/common/**/*.js', 'src/scenarios/*.js'],
+            files : ['<%= files.develop_dir %>/app/**/*.js', '<%= files.develop_dir %>/common/**/*.js', 'src/scenarios/*.js'],
             tasks : ['protractor:continuous']
         }
     });

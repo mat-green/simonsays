@@ -1,4 +1,20 @@
+function strip_src(paths) {
+    var result = [];
+    for(var a=0,b=paths.length; a<b; a++) {
+        var path_with_src = paths[a];
+        var path_without_src = path_with_src.substring(4);
+        result.push(path_without_src);
+    }
+    return result;
+}
+
 module.exports = function (grunt) {
+
+    var files = grunt.config('files');
+    var app_js_files = strip_src(files.app.js);
+    var vendor_js_files = strip_src(files.vendor.js);
+    var vendor_assets_files = strip_src(files.vendor.assets);
+
 
     /*
      * The `copy` task just copies files from A to B. We use it here to copy
@@ -10,8 +26,8 @@ module.exports = function (grunt) {
         files: [
           {
             src: [ '**', '!**/README.md' ],
-            dest: 'build/www/',
-            cwd: 'src/assets',
+            dest: '<%= files.develop_dir %>',
+            cwd: '<%= files.src_assets_dir %>',
             expand: true
           }
        ]
@@ -19,20 +35,20 @@ module.exports = function (grunt) {
       build_vendor_assets: {
         files: [
           {
-            src: [ '<%= vendor_files.assets %>' ],
-            dest: 'build/www/',
-            cwd: 'src',
+            src: vendor_assets_files,
+            dest: '<%= files.develop_dir %>',
+            cwd: '<%= files.src_dir %>',
             expand: true,
             flatten: true
           }
        ]
       },
-      build_appjs: {
+      build_app_js: {
         files: [
           {
-            src: [ '<%= app_files.js %>' ],
-            dest: 'build/www/',
-            cwd: 'src',
+            src: app_js_files,
+            dest: '<%= files.develop_dir %>',
+            cwd: '<%= files.src_dir %>',
             expand: true
           }
         ]
@@ -40,9 +56,9 @@ module.exports = function (grunt) {
       build_vendor_js: {
         files: [
           {
-            src: [ '<%= vendor_files.js %>' ],
-            dest: 'build/www/',
-            cwd: 'src',
+            src: vendor_js_files,
+            dest: '<%= files.develop_dir %>',
+            cwd: '<%= files.src_dir %>',
             expand: true
           }
         ]
@@ -52,10 +68,10 @@ module.exports = function (grunt) {
           {
             src: [
                 '**',
-                '!**/README.md',
+                '!**/README.md'
             ],
-            dest: 'build/dist/',
-            cwd: 'src/assets',
+            dest: '<%= files.compile_dir %>/',
+            cwd: '<%= files.src_assets_dir %>',
             expand: true
           }
         ]
