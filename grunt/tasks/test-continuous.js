@@ -6,9 +6,9 @@ module.exports = function (grunt) {
     grunt.registerTask( 'test-continuous', [
         'karma-conf:continuous',
         'karma:continuous:start',
-        'protractor:continuous',
+        'connect:continuous',
         'run:mock_server',
-        'connect:livereload',
+        'protractor:continuous',
         'watch'
     ]);
 
