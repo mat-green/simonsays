@@ -1,4 +1,4 @@
-# [Yet Another Angular Seed](https://github.com/New-Edge-Engineering/yet-another-angularjs-seed)
+# Yet Another Angular Seed
 
 A project kickstarter for [AngularJS](angularjs) web applications inspired by:
 
@@ -130,7 +130,7 @@ learn more.
   components into the `src/vendor/` directory.
 * `bower.json` - this is our project configuration for Bower and it contains the
   list of Bower dependencies we need.
-* `Gruntfile.js` - the univeral build script; [see "The Build System" &raquo;](grunt/README.md)
+* `Gruntfile.js` - the univeral build script; [Read more &raquo;](grunt/README.md)
 - `package.json` - metadata about the app, used by NPM and our build script. Our
   NPM dependencies are listed here.
 
@@ -171,7 +171,7 @@ You will need to change the remote if you want to push to a canonical repo:
 
 ```sh
 $ git remote remove origin
-$ git remote add origin <our git url>
+$ git remote add origin <your git url>
 ```
 
 And then execute the following to enable you start seeing changes happen as you
