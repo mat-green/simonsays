@@ -1,6 +1,19 @@
 # [Yet Another Angular Seed](https://github.com/New-Edge-Engineering/yet-another-angularjs-seed)
 
-An opinionated kickstarter for [AngularJS](http://angularjs.org) projects.
+A project kickstarter for [AngularJS](angularjs) web applications inspired by:
+
+* [ng-boilerplate][ngbp] created by @joshdmiller
+* [Better Grunt files (for organised developers)][eddify] by Andrew Eddie
+* [RENEWING THE GRUNT & LIVERELOAD MAGIC][rhumaric] by Rhumaric
+* [AngularJS Testing Starter][mknabe
+
+## Introduction
+
+### Pre-requisites
+
+* [git][git] to access the code from github
+* [nodejs][node] for execution of grunt and bower
+* [npm][npm] for project library management
 
 ## Quick Start
 
@@ -383,4 +396,15 @@ So join the team! We're good people.
 * https://github.com/mknabe/angular-testing-starter
 
 
-
+[angularjs]: http://angularjs.org
+[bower]: http://bower.io
+[eddify]: http://eddify.me/posts/better-grunt-files-for-organised-developers.html
+[git]: http://git-scm.com/
+[jasmine]: http://pivotal.github.com/jasmine/
+[karma]: http://karma-runner.github.io
+[mknabe]: https://github.com/mknabe/angular-testing-starter
+[ngbp]: http://bit.ly/ngBoilerplate
+[npm]: https://www.npmjs.org/
+[node]: http://nodejs.org
+[protractor]: https://github.com/angular/protractor
+[rhumaric]: http://rhumaric.com/2013/07/renewing-the-grunt-livereload-magic/
