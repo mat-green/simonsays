@@ -1,14 +1,14 @@
-function strip_src(paths) {
-    var result = [];
-    for(var a=0,b=paths.length; a<b; a++) {
-        var path_with_src = paths[a];
-        var path_without_src = path_with_src.substring(4);
-        result.push(path_without_src);
-    }
-    return result;
-}
-
 module.exports = function (grunt) {
+
+    function strip_src(paths) {
+        var result = [];
+        for(var a=0,b=paths.length; a<b; a++) {
+            var path_with_src = paths[a];
+            var path_without_src = path_with_src.substring(4);
+            result.push(path_without_src);
+        }
+        return result;
+    }
 
     var files = grunt.config('files');
     var app_js_files = strip_src(files.app.js);
