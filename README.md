@@ -108,7 +108,7 @@ yet-another-angularjs-seed/
   |  +- scenarios/
   |  |  +- <protractor behaviour driven tests>
   |  +- templates
-  |  |  +- index.html.tpl
+  |  |  +- index.html
   |  +- vendor/
   |     +- angular-bootstrap/
   |     +- bootstrap/
