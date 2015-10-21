@@ -7,14 +7,14 @@ module.exports = function (grunt) {
      */
     grunt.config.set('ngAnnotate', {
         options: {
-            singleQuotes: true,
+            singleQuotes: true
         },
         app: {
             files: [
                 {
                     src: [ 'app/**/*.js', '!app/**/*.spec.js' ],
-                    dest: 'build/www/',
-                    cwd: 'src',
+                    dest: '<%= files.develop_dir %>/',
+                    cwd: '<%= files.src_dir %>',
                     expand: true
                 }
             ]
@@ -23,13 +23,13 @@ module.exports = function (grunt) {
             files: [
                 {
                     src: [ 'common/**/*.js', '!common/**/*.spec.js' ],
-                    dest: 'build/www/',
-                    cwd: 'src',
+                    dest: '<%= files.develop_dir %>/',
+                    cwd: '<%= files.src_dir %>',
                     expand: true
                 }
             ]
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-ng-annotate');
 };

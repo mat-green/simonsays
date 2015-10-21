@@ -50,7 +50,7 @@ module.exports = function(config) {
             // test coverage
             'build/www/app/**/*.js' : ['coverage'],
             'build/www/common/**/*.js' : [ 'coverage'],
-            '**/*.coffee': ['coffee'],
+            '**/*.coffee': ['coffee']
         },
 
         reporters : ['dots', 'progress', 'junit', 'coverage'],

@@ -9,3 +9,7 @@ vendor/
 # Eclipse files and folders
 .project
 .settings
+
+# Mac OS X generated files and folders
+.DS_Store
+

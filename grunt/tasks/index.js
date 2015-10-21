@@ -25,7 +25,8 @@ module.exports = function(grunt) {
      * compilation.
      */
     grunt.registerMultiTask('index', 'Process index.html template', function() {
-        var dirRE = new RegExp('^(' + grunt.config('build_dir') + '|' + grunt.config('compile_dir') + ')\/', 'g');
+        var files = grunt.config('files');
+        var dirRE = new RegExp('^(' + files.src_dir + '|' + files.develop_dir + '|' + files.compile_dir + ')\/', 'g');
         var jsFiles = filterForJS(this.filesSrc).map(function(file) {
             return file.replace(dirRE, '');
         });

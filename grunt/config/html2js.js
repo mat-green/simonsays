@@ -12,10 +12,10 @@ module.exports = function (grunt) {
        */
       app: {
         options: {
-          base: 'src/app'
+          base: '<%= files.src_dir %>/app'
         },
-        src: [ '<%= app_files.atpl %>' ],
-        dest: '<%= build_dir %>/templates-app.js'
+        src: [ '<%= files.app.atpl %>' ],
+        dest: '<%= files.develop_dir %>/templates-app.js'
       },
 
       /**
@@ -23,10 +23,10 @@ module.exports = function (grunt) {
        */
       common: {
         options: {
-          base: 'src/common'
+          base: '<%= files.src_dir %>/common'
         },
-        src: [ '<%= app_files.ctpl %>' ],
-        dest: '<%= build_dir %>/templates-common.js'
+        src: [ '<%= files.app.ctpl %>' ],
+        dest: '<%= files.develop_dir %>/templates-common.js'
       }
     });
 
