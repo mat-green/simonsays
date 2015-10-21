@@ -46,7 +46,7 @@ module.exports = function(grunt) {
          * files, so this is probably not very useful.
          */
         assets : {
-            files : ['src/www/**/*'],
+            files : ['src/assets/**/*'],
             tasks : ['copy:build_app_assets', 'copy:build_vendor_assets']
         },
 
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
          * When the CSS files change, we need to compile and minify them.
          */
         less : {
-            files : ['src/**/*.less'],
+            files : ['src/less/**/*.less'],
             tasks : ['less:build']
         },
 
