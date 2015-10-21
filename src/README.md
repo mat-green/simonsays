@@ -30,6 +30,10 @@ src/
 - `src/less/` - LESS CSS files. [Read more &raquo;](less/README.md)
 - `src/index.html` - this is the HTML document of the single-page application.
   See below.
+* `src/vendor/` - third-party libraries. [Bower](http://bower.io) will install
+  packages here. Anything added to this directory will need to be manually added
+  to `build.config.js` and `karma/karma-unit.js` to be picked up by the build
+  system.
 
 See each directory for a detailed explanation.
 
