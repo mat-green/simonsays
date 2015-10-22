@@ -1,119 +1,128 @@
 <!DOCTYPE html>
 <html ng-app="ngBoilerplate" ng-controller="AppCtrl">
-  <head>
-    <title ng-bind="pageTitle"></title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!-- social media tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@joshdmiller">
-    <meta name="twitter:title" content="ngBoilerplate">
-    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
-    <meta name="twitter:creator" content="@joshdmiller">
-    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
-    <meta property="og:title" content="ngBoilerplate" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
-    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
-    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+        <title ng-bind="pageTitle"></title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/png" href="favicon.gif">
+        <!-- social media tags -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@newedgeengineer" />
+        <meta name="twitter:title" content="yet-another-angularjs-seed" />
+        <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around." />
+        <meta name="twitter:creator" content="@joshdmiller" />
+        <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+        <meta property="og:title" content="yet-another-angularjs-seed" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
+        <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+        <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
 
-    <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+        <!-- Place favicon.ico (with ? to ensure firefox pick this up) and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico?">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+        <!-- font awesome from BootstrapCDN -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
-    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+        <!-- compiled CSS -->
+<% styles.forEach( function ( file ) { %>
+        <link rel="stylesheet" type="text/css" href="<%= file %>" />
+<% }); %>
 
-    <!-- it's stupid to have to load it here, but this is for the +1 button -->
-    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-      { "parsetags": "explicit" }
-    </script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
-            ng-click="menuCollapsed = ! menuCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <div class="navbar-brand">
-            yet-another-angularjs-seed
-            <small>v<%= version %></small>
-          </div>
+        <!-- compiled JavaScript -->
+<% scripts.forEach( function ( file ) { %>
+        <script type="text/javascript" src="<%= file %>"></script>
+<% }); %>
+
+        <!-- it's stupid to have to load it here, but this is for the +1 button -->
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+            { "parsetags": "explicit" }
+        </script>
+
+        <!-- Segment Analytics (https://segment.com/): change XXXXXXXXXXXXXXX to be your project write key. -->
+        <script type="text/javascript">
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics;};};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e);}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n);};analytics.SNIPPET_VERSION="3.1.0";
+analytics.load("XXXXXXXXXXXXXXX");
+analytics.page();
+}}();
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true" ng-click="menuCollapsed = ! menuCollapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">
+                        YAAS
+                        <small>v<%= version %></small>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" collapse="menuCollapsed">
+                    <ul class="nav navbar-nav">
+                        <li ui-sref-active="active">
+                            <a href ui-sref="home"> <i class="fa fa-home"></i> Home </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a href ui-sref="about"> <i class="fa fa-info-circle"></i> What is it? </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/ngbp/ngbp#readme"> <i class="fa fa-book"></i> <span class="strike">Read the Docs</span> </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed"> <i class="fa fa-github-alt"></i> Github </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed/issues"> <i class="fa fa-comments"></i> Support </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" collapse="menuCollapsed">
-          <ul class="nav navbar-nav">
-            <li ui-sref-active="active">
-              <a href ui-sref="home">
-                <i class="fa fa-home"></i>
-                Home
-              </a>
-            </li>
-            <li ui-sref-active="active">
-              <a href ui-sref="about">
-                <i class="fa fa-info-circle"></i>
-                What is it?
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ngbp/ngbp#readme">
-                <i class="fa fa-book"></i>
-                <span class="strike">Read the Docs</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed">
-                <i class="fa fa-github-alt"></i>
-                Github
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed/issues">
-                <i class="fa fa-comments"></i>
-                Support
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="container" ui-view="main"></div>
+        <div class="container" ui-view="main"></div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <ul class="social">
-            <li><a target="_blank" href="https://www.google.com/+NewedgeengineeringLimited"><i class="fa fa-google-plus-sign"></i></a></li>
-            <li><a target="_blank" href="http://twitter.com/newedgeengineer"><i class="fa fa-twitter-sign"></i></a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/company/new-edge-engineering-ltd"><i class="fa fa-linkedin-sign"></i></a></li>
-            <li><a target="_blank" href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed"><i class="fa fa-github-sign"></i></a></li>
-          </ul>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <ul class="social">
+                        <li>
+                            <a target="_blank" href="https://www.google.com/+NewedgeengineeringLimited"><i class="fa fa-google-plus-sign"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://twitter.com/newedgeengineer"><i class="fa fa-twitter-sign"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.linkedin.com/company/new-edge-engineering-ltd"><i class="fa fa-linkedin-sign"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed"><i class="fa fa-github-sign"></i></a>
+                        </li>
+                    </ul>
 
-
-          <p>
-            (c) 2015 <a href="http://www.newedgeengineering.com">New EdgeEngineering Ltd</a>.
-            <a href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed/fork_select">Fork this</a>
-            to kickstart your next project.
-            <br />
-            This kickstarter is based on
-            <a href="http://www.angularjs.org">AngularJS</a>,
-            <a href="http://getbootstrap.com">Bootstrap</a>,
-            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
-            and
-            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
-          </p>
-        </div>
-      </div>
-    </footer>
-  </body>
+                    <p>
+                        (c) 2015 <a href="http://www.newedgeengineering.com">New EdgeEngineering Ltd</a>. <a href="https://github.com/New-Edge-Engineering/yet-another-angularjs-seed/fork_select">Fork this</a>
+                        to kickstart your next project.
+                        <br />
+                        This kickstarter is based on
+                        <a href="http://www.angularjs.org">AngularJS</a>, <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
+                        and
+                        <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

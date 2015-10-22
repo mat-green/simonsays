@@ -4,8 +4,9 @@ A project kickstarter for [AngularJS](angularjs) web applications inspired by:
 
 * [ng-boilerplate][ngbp] created by @joshdmiller
 * [Better Grunt files (for organised developers)][eddify] by Andrew Eddie
-* [RENEWING THE GRUNT & LIVERELOAD MAGIC][rhumaric] by Rhumaric
+* [Renewing The Grunt & Livereload Magic][rhumaric] by Rhumaric
 * [AngularJS Testing Starter][mknabe]
+* [HTML 5 Boilerplate][html5boilerplate]
 
 With the intention of being used within a continuous delivery process, i.e.
 executed by [Jenkins][jenkins].
@@ -295,6 +296,17 @@ following to the end of the `body` tag in `index.html`:
 
 Boom!
 
+## Continuous Delivery
+
+This kickstarter has been set up to work with a continuous integration system
+like [Jenkins][jenkins]. Therefore you can override the default value that is
+dynamically created with `grunt/config/pkg.js` by using the following command
+line, replace yy.mm.build with the appropriate value:
+
+```sh
+npm run package -- --target=yy.mm.build
+```
+
 ## Feedback
 
 ### Reporting Issuses
@@ -319,6 +331,7 @@ So join the team! We're good people.
 [eddify]: http://eddify.me/posts/better-grunt-files-for-organised-developers.html
 [git]: http://git-scm.com/
 [gruntjs]: http://gruntjs.org
+[html5boilerplate]: https://html5boilerplate.com/
 [jasmine]: http://pivotal.github.com/jasmine/
 [jenkins]: https://jenkins-ci.org/
 [karma]: http://karma-runner.github.io
