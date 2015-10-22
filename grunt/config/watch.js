@@ -71,7 +71,7 @@ module.exports = function(grunt) {
          */
         less : {
             files : ['src/less/**/*.less'],
-            tasks : ['less:build']
+            tasks : ['less:build', 'connect:continuous']
         },
 
         /**
