@@ -13,6 +13,7 @@ module.exports = function (grunt) {
     var files = grunt.config('files');
     var app_js_files = strip_src(files.app.js);
     var vendor_js_files = strip_src(files.vendor.js);
+    var vendor_css_files = strip_src(files.vendor.css);
     var vendor_assets_files = strip_src(files.vendor.assets);
 
 
@@ -57,6 +58,16 @@ module.exports = function (grunt) {
         files: [
           {
             src: vendor_js_files,
+            dest: '<%= files.develop_dir %>',
+            cwd: '<%= files.src_dir %>',
+            expand: true
+          }
+        ]
+      },
+      build_vendor_css: {
+        files: [
+          {
+            src: [ vendor_css_files ],
             dest: '<%= files.develop_dir %>',
             cwd: '<%= files.src_dir %>',
             expand: true
