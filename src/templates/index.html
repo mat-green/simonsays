@@ -20,14 +20,14 @@
         <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <meta name="description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
         <!-- Place favicon.ico (with ? to ensure firefox pick this up) and apple-touch-icon.png in the root directory -->
         <link rel="shortcut icon" href="favicon.ico?">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <!-- font awesome from BootstrapCDN -->
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 
         <!-- compiled CSS -->
 <% styles.forEach( function ( file ) { %>
@@ -42,14 +42,6 @@
         <!-- it's stupid to have to load it here, but this is for the +1 button -->
         <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
             { "parsetags": "explicit" }
-        </script>
-
-        <!-- Segment Analytics (https://segment.com/): change XXXXXXXXXXXXXXX to be your project write key. -->
-        <script type="text/javascript">
-!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics;};};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e);}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n);};analytics.SNIPPET_VERSION="3.1.0";
-analytics.load("XXXXXXXXXXXXXXX");
-analytics.page();
-}}();
         </script>
     </head>
     <body>

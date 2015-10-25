@@ -10,7 +10,11 @@ angular.module( 'ngBoilerplate', [
   $urlRouterProvider.otherwise( '/home' );
 })
 
+/*
+ * Segment Analytics (https://segment.com/): change XXXXXXXXXXXXXXX to be your project write key.
+ */
 .run( function run () {
+  segmentio.load('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
