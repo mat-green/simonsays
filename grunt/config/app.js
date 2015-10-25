@@ -66,6 +66,7 @@ module.exports = function(grunt) {
             js : [
                 '<%= files.src_dir %>/vendor/angular/angular.js',
                 '<%= files.src_dir %>/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
+                '<%= files.src_dir %>/vendor/angular-segmentio/angular-segmentio.js',
                 '<%= files.src_dir %>/vendor/angular-ui-router/release/angular-ui-router.js',
                 '<%= files.src_dir %>/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js'
             ],
