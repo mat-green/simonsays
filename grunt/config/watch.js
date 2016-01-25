@@ -8,7 +8,7 @@ module.exports = function(grunt) {
          * plugin should auto-detect.
          */
         options : {
-            livereload : true
+            livereload : '<%= connect.continuous.options.livereload %>'
         },
 
         /**
