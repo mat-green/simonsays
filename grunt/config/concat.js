@@ -26,10 +26,12 @@ module.exports = function(grunt) {
             src : [
                 '<%= files.vendor.js %>',
                 'grunt/templates/module.prefix',
-                '<%= files.develop_dir %>/app/**/*.js',
-                '<%= files.develop_dir %>/common/**/*.js',
                 '<%= html2js.app.dest %>',
                 '<%= html2js.common.dest %>',
+                '<% var a = files.app.modules; for(var p in a) { if(a[p].replace) { a[p] = a[p].replace("src_dir", "develop_dir"); } } %><%= a %>',
+                '<%= files.develop_dir %>/app/**/*.js',
+                '<%= files.develop_dir %>/common/**/*.js',
+                '<%= files.develop_dir %>/assets/**/*.js',
                 'grunt/templates/module.suffix'
             ],
             dest : '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.js'
