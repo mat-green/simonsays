@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         },
         continuous : {
             options : {
-                livereload : 35729,
+                livereload : 35730,
                 open : true,
                 base : ['<%= files.develop_dir %>']
 
