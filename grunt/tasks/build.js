@@ -15,6 +15,7 @@ module.exports = function (grunt) {
         'copy:build_vendor_assets',
         'copy:build_vendor_js',
         'copy:build_vendor_css',
+        'copy:build_vendor_fonts',
         'index:build'
     ]);
 
