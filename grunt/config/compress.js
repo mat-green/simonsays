@@ -7,9 +7,9 @@ module.exports = function (grunt) {
             },
             files: [
                 {
-                    src: [
-                        '<%= files.compile_dir %>/**'
-                    ]
+                    cwd: '<%= files.compile_dir %>/',
+                    expand: true,
+                    src: [ '**/*' ]
                 }
             ]
         }
