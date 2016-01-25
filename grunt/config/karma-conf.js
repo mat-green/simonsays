@@ -12,6 +12,7 @@ module.exports = function (grunt) {
           '<%= html2js.app.dest %>',
           '<%= html2js.common.dest %>',
           '<%= files.test.js %>',
+          '<%= files.app.modules %>',
           '<%= files.app.js %>',
           '<%= files.app.jsunit %>'
         ]
