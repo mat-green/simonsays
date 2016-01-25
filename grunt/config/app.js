@@ -27,8 +27,8 @@ module.exports = function(grunt) {
          */
         app: {
             modules: [
-                '<%= files.src_dir %>/app/about/about.js'
-                '<%= files.src_dir %>/app/home/home.js'
+                '<%= files.src_dir %>/app/about/about.js',
+                '<%= files.src_dir %>/app/home/home.js',
                 '<%= files.src_dir %>/app/app.js'
             ],
             js : [
@@ -81,13 +81,7 @@ module.exports = function(grunt) {
                 '<%= files.src_dir %>/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js'
             ],
             css : [],
-            fonts : [
-                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot',
-                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg',
-                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf',
-                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff',
-                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2'
-            ],
+            fonts : [],
             assets : []
         }
     });
