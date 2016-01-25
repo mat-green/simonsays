@@ -15,12 +15,10 @@ module.exports = function (grunt) {
         dir: '<%= files.develop_dir %>',
         src: [
             '<%= files.vendor.js %>',
-            '<%= files.develop_dir %>/app/**/*.js',
-            '<%= files.develop_dir %>/common/**/*.js',
-            '<%= files.develop_dir %>/**/*.js',
+            '<%= files.app.modules %>',
+            '<%= files.app.js %>',
             '<%= html2js.app.dest %>',
             '<%= html2js.common.dest %>',
-            '<%= files.vendor.css %>',
             '<%= files.develop_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       },
@@ -34,7 +32,6 @@ module.exports = function (grunt) {
         dir: '<%= files.compile_dir %>',
         src: [
           '<%= concat.compile_js.dest %>',
-          '<%= files.vendor.css %>',
           '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       }
