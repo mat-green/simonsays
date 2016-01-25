@@ -11,10 +11,12 @@ module.exports = function (grunt) {
     }
 
     var files = grunt.config('files');
+    var app_module_files = strip_src(files.app.modules);
     var app_js_files = strip_src(files.app.js);
     var vendor_js_files = strip_src(files.vendor.js);
     var vendor_css_files = strip_src(files.vendor.css);
     var vendor_assets_files = strip_src(files.vendor.assets);
+    var vendor_assets_fonts = strip_src(files.vendor.fonts);
 
 
     /*
@@ -44,10 +46,21 @@ module.exports = function (grunt) {
           }
        ]
       },
+      build_vendor_fonts: {
+        files: [
+          {
+            src: vendor_assets_fonts,
+            dest: '<%= files.develop_dir %>/fonts',
+            cwd: '<%= files.src_dir %>',
+            expand: true,
+            flatten: true
+          }
+       ]
+      },
       build_app_js: {
         files: [
           {
-            src: app_js_files,
+            src: [ app_module_files, app_js_files ],
             dest: '<%= files.develop_dir %>',
             cwd: '<%= files.src_dir %>',
             expand: true
