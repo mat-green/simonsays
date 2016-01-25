@@ -26,7 +26,17 @@ module.exports = function(grunt) {
          * app's unit tests.
          */
         app: {
-            js : [ '<%= files.src_dir %>/app/**/*.js', '<%= files.src_dir %>/common/**/*.js', '<%= files.src_dir %>/assets/**/*.js', '!<%= files.src_dir %>/**/*.spec.js' ],
+            modules: [
+                '<%= files.src_dir %>/app/about/about.js'
+                '<%= files.src_dir %>/app/home/home.js'
+                '<%= files.src_dir %>/app/app.js'
+            ],
+            js : [
+                '<%= files.src_dir %>/app/**/*.js',
+                '<%= files.src_dir %>/common/**/*.js',
+                '<%= files.src_dir %>/assets/**/*.js',
+                '!<%= files.src_dir %>/**/*.spec.js'
+            ],
             jsunit : ['<%= files.src_dir %>/app/**/*.spec.js'],
 
             coffee : ['<%= files.src_dir %>/app/**/*.coffee', '<%= files.src_dir %>/common/**/*.coffee', '!<%= files.src_dir %>/**/*.spec.coffee'],
@@ -71,6 +81,13 @@ module.exports = function(grunt) {
                 '<%= files.src_dir %>/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js'
             ],
             css : [],
+            fonts : [
+                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot',
+                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg',
+                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf',
+                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff',
+                '<%= files.src_dir %>/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2'
+            ],
             assets : []
         }
     });
