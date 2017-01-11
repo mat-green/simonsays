@@ -22,6 +22,12 @@ module.exports = function(grunt) {
                 }
             }
         },
+        preview : {
+            options : {
+                open : true,
+                base : ['<%= files.compile_dir %>']
+            }
+        },
         compile : {
             options : {
                 base : ['<%= files.compile_dir %>']

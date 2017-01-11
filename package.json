@@ -57,6 +57,7 @@
     "prebuild": "npm install",
     "build": "grunt build",
     "prepackage": "npm install",
+    "preview": "grunt preview",
     "package": "grunt distribute"
   }
 }
