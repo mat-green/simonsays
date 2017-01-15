@@ -1,9 +1,8 @@
-angular
-  .module('ngBoilerplate.home')
-  .controller( 'HomeCtrl', homeController);
-
+define([], function(){
 /**
  * And of course we define a controller for our route.
  */
-function homeController( $scope ) {
-}
+  var HomeCtrl = function( $scope ) {
+  };
+  return ['$scope', HomeCtrl];
+});

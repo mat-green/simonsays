@@ -6,9 +6,10 @@
     "angular": "~1.4",
     "angular-mocks": "~1.4",
     "angular-bootstrap": "~1.2",
-    "angular-segmentio": "~1.0",
-    "angular-ui-router": "~0.2",
-    "bootstrap": "~3.3"
+    "angular-placeholders": "*",
+    "angular-ui-router": "~0.3",
+    "bootstrap": "~3.3",
+    "requirejs": "^2.3.2"
   },
   "resolutions": {
     "angular": "~1.4"

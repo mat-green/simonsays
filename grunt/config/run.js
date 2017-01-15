@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
     grunt.config.set('run', {
-        mock_server : {
+        continuous : { // provide mock server for tests.
             options : {
                 wait : false
             },

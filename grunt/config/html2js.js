@@ -7,6 +7,9 @@ module.exports = function (grunt) {
      * part of the initial payload as one JavaScript file. Neat!
      */
     grunt.config.set('html2js', {
+      options: {
+        amd: true
+      },
       /**
        * These are the templates from `src/app`.
        */

@@ -14,11 +14,6 @@ module.exports = function (grunt) {
       build: {
         dir: '<%= files.develop_dir %>',
         src: [
-            '<%= files.vendor.js %>',
-            '<%= files.app.modules %>',
-            '<%= files.app.js %>',
-            '<%= html2js.app.dest %>',
-            '<%= html2js.common.dest %>',
             '<%= files.develop_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       },

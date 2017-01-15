@@ -7,8 +7,8 @@ module.exports = function (grunt) {
   grunt.registerTask( 'compile', [
     'less:compile',
     'copy:compile_assets',
-    'concat:compile_js',
-    'uglify',
+    'copy:compile_requirejs_js',
+    'requirejs:compile',
     'index:compile'
   ]);
 

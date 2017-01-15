@@ -4,20 +4,27 @@ module.exports = function (grunt) {
         var result = [];
         for(var a=0,b=paths.length; a<b; a++) {
             var path_with_src = paths[a];
-            var path_without_src = path_with_src.substring(4);
+            var path_without_src = "";
+            grunt.log.debug("Processing path: " + path_with_src);
+            if(path_with_src[0] == "!") {
+                path_without_src = path_with_src.substring(5);
+                path_without_src = "!" + path_without_src;
+            } else {
+                path_without_src = path_with_src.substring(4);
+            }
+            grunt.log.debug("Output path: " + path_without_src);
             result.push(path_without_src);
         }
         return result;
     }
 
     var files = grunt.config('files');
-    var app_module_files = strip_src(files.app.modules);
+    var require_js_files = strip_src([ files.app.requirejs ]);
     var app_js_files = strip_src(files.app.js);
     var vendor_js_files = strip_src(files.vendor.js);
     var vendor_css_files = strip_src(files.vendor.css);
     var vendor_assets_files = strip_src(files.vendor.assets);
     var vendor_assets_fonts = strip_src(files.vendor.fonts);
-
 
     /*
      * The `copy` task just copies files from A to B. We use it here to copy
@@ -33,7 +40,7 @@ module.exports = function (grunt) {
             cwd: '<%= files.src_assets_dir %>',
             expand: true
           }
-       ]
+        ]
       },
       build_vendor_assets: {
         files: [
@@ -44,7 +51,7 @@ module.exports = function (grunt) {
             expand: true,
             flatten: true
           }
-       ]
+        ]
       },
       build_vendor_fonts: {
         files: [
@@ -55,12 +62,22 @@ module.exports = function (grunt) {
             expand: true,
             flatten: true
           }
-       ]
+        ]
       },
       build_app_js: {
         files: [
           {
-            src: [ app_module_files, app_js_files ],
+            src: app_js_files,
+            dest: '<%= files.develop_dir %>',
+            cwd: '<%= files.src_dir %>',
+            expand: true
+          }
+        ]
+      },
+      build_requirejs_js: {
+        files: [
+          {
+            src: files.app.configjs,
             dest: '<%= files.develop_dir %>',
             cwd: '<%= files.src_dir %>',
             expand: true
@@ -96,6 +113,16 @@ module.exports = function (grunt) {
             ],
             dest: '<%= files.compile_dir %>/',
             cwd: '<%= files.src_assets_dir %>',
+            expand: true
+          }
+        ]
+      },
+      compile_requirejs_js: {
+        files: [
+          {
+            src: [ require_js_files, files.app.configjs ],
+            dest: '<%= files.compile_dir %>',
+            cwd: '<%= files.src_dir %>',
             expand: true
           }
         ]

@@ -5,15 +5,15 @@ module.exports = function(grunt) {
      */
     grunt.config.set('files', {
         src_dir: 'src',
-        build_dir: 'build',
+        build_dir: 'target',
         /*
          * The `develop_dir` folder is where our projects are compiled during
          * development and the `compile_dir` folder is where our app resides once it's
          * completely built.
          */
-        develop_dir: '<%= files.build_dir %>/www',
-        compile_dir: '<%= files.build_dir %>/dist',
-        docs_dir: '<%= files.build_dir %>/api',
+        develop_dir: '<%= files.build_dir %>/build',
+        compile_dir: '<%= files.build_dir %>/www',
+        docs_dir: '<%= files.build_dir %>/docs',
         reports_dir: '<%= files.build_dir %>/reports',
         src_assets_dir: '<%= files.src_dir %>/assets',
         /*
@@ -26,11 +26,8 @@ module.exports = function(grunt) {
          * app's unit tests.
          */
         app: {
-            modules: [
-                '<%= files.src_dir %>/app/about/about.js',
-                '<%= files.src_dir %>/app/home/home.js',
-                '<%= files.src_dir %>/app/app.js'
-            ],
+            configjs: 'config.js',
+            requirejs: '<%= files.src_dir %>/lib/requirejs/require.js',
             js : [
                 '<%= files.src_dir %>/app/**/*.js',
                 '<%= files.src_dir %>/common/**/*.js',
@@ -52,7 +49,7 @@ module.exports = function(grunt) {
          * This is a collection of files used during testing only.
          */
         test: {
-            js : [ '<%= files.src_dir %>/vendor/angular-mocks/angular-mocks.js' ]
+            js : [ '<%= files.src_dir %>/lib/angular-mocks/angular-mocks.js' ]
         },
         /*
          * This is the same as `files.app`, except it contains patterns that
@@ -74,11 +71,13 @@ module.exports = function(grunt) {
          */
         vendor: {
             js : [
-                '<%= files.src_dir %>/vendor/angular/angular.js',
-                '<%= files.src_dir %>/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
-                '<%= files.src_dir %>/vendor/angular-segmentio/angular-segmentio.js',
-                '<%= files.src_dir %>/vendor/angular-ui-router/release/angular-ui-router.js',
-                '<%= files.src_dir %>/vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js'
+                '<%= files.app.requirejs %>',
+                '<%= files.src_dir %>/lib/angular/angular.js',
+                '<%= files.src_dir %>/lib/angular-bootstrap/ui-bootstrap-tpls.min.js',
+                '<%= files.src_dir %>/lib/angular-segmentio/angular-segmentio.js',
+                '<%= files.src_dir %>/lib/angular-ui-router/release/angular-ui-router.js',
+                '<%= files.src_dir %>/lib/domReady/domReady.js',
+                '<%= files.src_dir %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.js'
             ],
             css : [],
             fonts : [],

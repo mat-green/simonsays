@@ -12,8 +12,20 @@
  * The dependencies block here is also where component dependencies should be
  * specified, as shown below.
  */
-angular
-  .module( 'ngBoilerplate.home', [
-    'ui.router',
-    'plusOne'
-  ]);
+define([
+   'require',
+   'angular',
+   // Application
+   'app/home/home.config',
+   'app/home/home.controller',
+   'common/plusOne/plusOne.module'
+],
+function(require, angular){
+  return angular
+    .module( 'ngBoilerplate.home', [
+      'ui.router',
+      'plusOne'
+    ])
+    .config(require('app/home/home.config'))
+    .controller( 'HomeCtrl', require('app/home/home.controller'));
+});

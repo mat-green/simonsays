@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-
+    // Get a static content server
+    var serveStatic = require('serve-static');
     /* basic web server for testing and serving single page content */
     grunt.config.set('connect', {
         options : {
@@ -17,7 +18,7 @@ module.exports = function(grunt) {
                     return [
                         require('connect-livereload')(),
                         // Serve the project folder
-                        connect.static(options.base[0])
+                        serveStatic(options.base[0])
                     ];
                 }
             }
@@ -25,7 +26,8 @@ module.exports = function(grunt) {
         preview : {
             options : {
                 open : true,
-                base : ['<%= files.compile_dir %>']
+                base : ['<%= files.compile_dir %>'],
+                keepalive: true
             }
         },
         compile : {

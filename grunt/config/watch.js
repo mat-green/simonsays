@@ -19,7 +19,7 @@ module.exports = function(grunt) {
          */
         jssrc : {
             files : [ '<%= files.app.js %>' ],
-            tasks : ['jshint:src', 'karma:unit:run', 'ngAnnotate']
+            tasks : ['jshint:src', 'karma:unit:run']
         },
 
         /**
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
          */
         coffeesrc : {
             files : ['<%= files.app.coffee %>'],
-            tasks : ['coffeelint:src', 'coffee:source', 'karma:unit:run', 'ngAnnotate']
+            tasks : ['coffeelint:src', 'coffee:source', 'karma:unit:run']
         },
 
         /**
