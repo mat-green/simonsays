@@ -5,7 +5,7 @@ module.exports = function (grunt) {
      */
     grunt.config.set('protractor', {
         options : {
-            configFile : "grunt/test/protractor-conf.js", // Default config file
+            configFile : "<%= files.build_dir %>/protractor-conf.js", // Default config file
             noColor : false, // If true, protractor will not use colors in its output.
             // debug: true,
             args : {

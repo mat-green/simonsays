@@ -9,6 +9,7 @@ module.exports = function (grunt) {
         'livereload',
         'connect:continuous',
         'run:continuous',
+        'protractor-conf:e2e',
         'protractor:continuous',
         'watch'
     ]);

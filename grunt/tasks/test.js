@@ -8,6 +8,7 @@ module.exports = function (grunt) {
         'karma:unit:start',
         'connect:compile',
         'run:mock_server',
+        'protractor-conf:e2e',
         'protractor:e2e'
     ]);
 
