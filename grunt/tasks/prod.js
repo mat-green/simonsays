@@ -7,7 +7,7 @@ module.exports = function (grunt) {
   grunt.registerTask( 'prod', [
     'clean',
     'build',
-    'optimise',
+    'compile',
     'test',
     'compress' // publish as a zip file.
   ]);

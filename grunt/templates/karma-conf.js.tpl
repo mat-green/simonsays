@@ -11,18 +11,36 @@ module.exports = function(config) {
          * This is the list of file patterns to load into the browser during testing.
          */
         files : [
-            <% scripts.forEach( function ( file ) { %>'<%= file %>',
-            <% }); %>
+            {
+                pattern: 'target/build/app/**/*.js',
+                included: false
+            }, {
+                pattern: 'target/build/common/**/*.js',
+                included: false
+            }, {
+                pattern: 'target/build/lib/**/*.js',
+                included: false
+            }, {
+                pattern: 'target/build/*.js',
+                included: false
+            }, {
+                pattern: 'src/app/**/*.spec.js',
+                included: false
+            }, {
+                pattern: 'src/app/**/*.mock.js',
+                included: false
+            },
+            'src/config.test.js'
         ],
 
-        exclude : ['src/assets/**/*.js'],
+        exclude : [ 'src/app/*main.js' ],
 
         /**
          * Disable file watching by default.
          */
         autoWatch : false,
 
-        frameworks : ['jasmine'],
+        frameworks : ['jasmine', 'requirejs'],
 
         /*
          * The list of browsers to launch to test on. This includes only "PhantomJS" by
@@ -45,8 +63,8 @@ module.exports = function(config) {
             // 'app/partials/*.html': 'html2js'
 
             // test coverage
-            'build/www/app/**/*.js' : ['coverage'],
-            'build/www/common/**/*.js' : ['coverage'],
+            'target/build/app/**/*.js' : ['coverage'],
+            'target/build/common/**/*.js' : ['coverage'],
             '**/*.coffee' : ['coffee']
         },
 
@@ -60,7 +78,8 @@ module.exports = function(config) {
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-junit-reporter',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+            'karma-requirejs'
         ],
 
         // plugin settings
@@ -89,4 +108,3 @@ module.exports = function(config) {
 
     });
 };
-

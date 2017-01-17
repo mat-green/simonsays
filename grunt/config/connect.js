@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        preview : {
+        viewing : {
             options : {
                 open : true,
                 base : ['<%= files.compile_dir %>'],

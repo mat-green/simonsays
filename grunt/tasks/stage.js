@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     'clean',
     'build',
     'compile',
-    'connect:preview'
+    'connect:viewing'
   ]);
 
 };

@@ -26,7 +26,7 @@ module.exports = function(grunt) {
          * app's unit tests.
          */
         app: {
-            configjs: 'config.js',
+            configjs: 'config.build.js',
             requirejs: '<%= files.src_dir %>/lib/requirejs/require.js',
             js : [
                 '<%= files.src_dir %>/app/**/*.js',
@@ -77,7 +77,8 @@ module.exports = function(grunt) {
                 '<%= files.src_dir %>/lib/angular-segmentio/angular-segmentio.js',
                 '<%= files.src_dir %>/lib/angular-ui-router/release/angular-ui-router.js',
                 '<%= files.src_dir %>/lib/domReady/domReady.js',
-                '<%= files.src_dir %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.js'
+                '<%= files.src_dir %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.js',
+                '<%= files.src_dir %>/lib/angular-mocks/angular-mocks.js'
             ],
             css : [],
             fonts : [],

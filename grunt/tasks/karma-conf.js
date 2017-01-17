@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-        /*
+    /*
      * A utility function to get all app JavaScript sources.
      */
     function filterForJS(files) {
