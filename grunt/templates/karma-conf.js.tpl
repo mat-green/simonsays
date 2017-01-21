@@ -12,16 +12,16 @@ module.exports = function(config) {
          */
         files : [
             {
-                pattern: 'target/build/app/**/*.js',
+                pattern: '<%= base %>app/**/*.js',
                 included: false
             }, {
-                pattern: 'target/build/common/**/*.js',
+                pattern: '<%= base %>common/**/*.js',
                 included: false
             }, {
-                pattern: 'target/build/lib/**/*.js',
+                pattern: '<%= base %>lib/**/*.js',
                 included: false
             }, {
-                pattern: 'target/build/*.js',
+                pattern: '<%= base %>*.js',
                 included: false
             }, {
                 pattern: 'src/app/**/*.spec.js',
@@ -63,8 +63,8 @@ module.exports = function(config) {
             // 'app/partials/*.html': 'html2js'
 
             // test coverage
-            'target/build/app/**/*.js' : ['coverage'],
-            'target/build/common/**/*.js' : ['coverage'],
+            '<%= base %>app/**/*.js' : ['coverage'],
+            '<%= base %>common/**/*.js' : ['coverage'],
             '**/*.coffee' : ['coffee']
         },
 
@@ -87,13 +87,13 @@ module.exports = function(config) {
             // type of file to output, use text to output to console
             type : 'cobertura',
             // directory where coverage results are saved
-            dir : 'build/reports/',
+            dir : '<%= reports %>/',
             subdir : 'coverage',
             // if type is text or text-summary, you can set the file name
             file : 'cobertura.xml'
         },
         junitReporter : {
-            outputDir : 'build/reports/tests/',
+            outputDir : '<%= reports %>/tests/',
             outputFile : 'junit.xml',
             suite : ''
         },

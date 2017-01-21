@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             options : {
                 // livereload : 35729, // Default port for livereload
                 open : true,
-                base : ['<%= files.develop_dir %>'],
+                base : ['<%= files.development %>'],
                 // Livereload needs connect to insert a Javascript snippet in the
                 // pages it serves. This requires using a custom connect middleware.
                 middleware : function(connect, options) {
@@ -26,13 +26,13 @@ module.exports = function(grunt) {
         viewing : {
             options : {
                 open : true,
-                base : ['<%= files.compile_dir %>'],
+                base : ['<%= files.distribution %>'],
                 keepalive: true
             }
         },
         compile : {
             options : {
-                base : ['<%= files.compile_dir %>']
+                base : ['<%= files.distribution %>']
             }
         }
     });

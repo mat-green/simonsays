@@ -12,9 +12,9 @@ module.exports = function (grunt) {
        * `src` property contains the list of included files.
        */
       build: {
-        dir: '<%= files.develop_dir %>',
+        dir: '<%= files.development %>',
         src: [
-            '<%= files.develop_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+            '<%= files.development %>/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       },
 
@@ -24,10 +24,10 @@ module.exports = function (grunt) {
        * file. Now we're back!
        */
       compile: {
-        dir: '<%= files.compile_dir %>',
+        dir: '<%= files.distribution %>',
         src: [
           '<%= concat.compile_js.dest %>',
-          '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css'
+          '<%= files.distribution %>/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       }
     });

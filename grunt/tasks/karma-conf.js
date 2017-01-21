@@ -16,11 +16,13 @@ module.exports = function(grunt) {
      */
     grunt.registerMultiTask('karma-conf', 'Process karma configuration template', function() {
         var jsFiles = filterForJS(this.filesSrc);
+        var base_dir = this.data.dir;
 
-        grunt.file.copy('grunt/templates/karma-conf.js.tpl', this.data.dir + '/karma-conf.js', {
+        grunt.file.copy('grunt/templates/karma-conf.js.tpl', base_dir + '/karma-conf.js', {
             process : function(contents, path) {
                 return grunt.template.process(contents, {
                     data : {
+                        base: base_dir,
                         scripts : jsFiles
                     }
                 });

@@ -6,7 +6,7 @@ module.exports = function (grunt) {
      */
     grunt.config.set('protractor-conf', {
         e2e: {
-            dir: '<%= files.build_dir %>',
+            dir: '<%= files.development %>',
             port: '<%= connect.options.port %>'
         }
     });

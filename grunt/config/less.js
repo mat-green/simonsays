@@ -8,12 +8,12 @@ module.exports = function (grunt) {
     grunt.config.set('less', {
       build: {
         files: {
-          '<%= files.develop_dir %>/<%= pkg.name %>-<%= pkg.version %>.css': '<%= files.app.less %>'
+          '<%= files.development %>/<%= pkg.name %>-<%= pkg.version %>.css': '<%= files.app.less %>'
         }
       },
       compile: {
         files: {
-          '<%= files.compile_dir %>/<%= pkg.name %>-<%= pkg.version %>.css': '<%= files.app.less %>'
+          '<%= files.distribution %>/<%= pkg.name %>-<%= pkg.version %>.css': '<%= files.app.less %>'
         },
         options: {
           cleancss: true,
