@@ -25,8 +25,9 @@ module.exports = function (grunt) {
        */
       compile: {
         dir: '<%= files.distribution %>',
+        main: '<%= pkg.name %>-<%= pkg.version %>',
         src: [
-          '<%= concat.compile_js.dest %>',
+          '<%= requirejs.compile.options.out %>',
           '<%= files.distribution %>/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       }

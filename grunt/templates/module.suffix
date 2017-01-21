@@ -1,1 +1,1 @@
-})( window, window.define, window.angular );
+}( window, window.define ));

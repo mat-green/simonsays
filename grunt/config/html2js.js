@@ -8,7 +8,8 @@ module.exports = function (grunt) {
      */
     grunt.config.set('html2js', {
       options: {
-        amd: true
+        amd: true,
+        useStrict: true
       },
       /**
        * These are the templates from `src/app`.

@@ -104,16 +104,58 @@ module.exports = function (grunt) {
           }
         ]
       },
-      compile_requirejs_js: {
+      compile_app_config: {
         files: [
           {
             src: '<%= files.app.config.distribution %>',
-            dest: '<%= files.distribution %>/config.js',
+            dest: '<%= files.distribution %>',
             cwd: '<%= files.base.src %>',
             expand: true
           }
         ]
-      }
+      },
+      compile_vendor_assets: {
+        files: [
+          {
+            src: strip_src(files.vendor.assets),
+            dest: '<%= files.distribution %>',
+            cwd: '<%= files.base.src %>',
+            expand: true,
+            flatten: true
+          }
+        ]
+      },
+      compile_vendor_css: {
+        files: [
+          {
+            src: strip_src(files.vendor.css),
+            dest: '<%= files.distribution %>',
+            cwd: '<%= files.base.src %>',
+            expand: true
+          }
+        ]
+      },
+      compile_vendor_fonts: {
+        files: [
+          {
+            src: strip_src(files.vendor.fonts),
+            dest: '<%= files.distribution %>/fonts',
+            cwd: '<%= files.base.src %>',
+            expand: true,
+            flatten: true
+          }
+        ]
+      },
+      compile_vendor_js: {
+        files: [
+          {
+            src: [ strip_src(files.vendor.js.map(function(value) { return value.dist || value.lib; })), strip_src(files.vendor.require)],
+            dest: '<%= files.distribution %>',
+            cwd: '<%= files.base.src %>',
+            expand: true
+          }
+        ]
+      },
     });
 
     grunt.loadNpmTasks('grunt-contrib-copy');

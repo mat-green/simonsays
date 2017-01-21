@@ -115,9 +115,12 @@
         <!-- load JavaScript via AMD pattern -->
         <script type="text/javascript" src="lib/requirejs/require.js"></script>
         <script type="application/javascript">
-require(['config.js'], function () {
+require(['config.js'], function () {<% if(main != "") { %>
+    require(['<%= main %>'], function() {
+      require(['app/app.main']);
+    });<% } else { %>
     require(['app/app.main']);
-});
+<% } %>});
 </script>
     </body>
 </html>

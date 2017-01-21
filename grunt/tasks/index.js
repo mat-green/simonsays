@@ -33,11 +33,13 @@ module.exports = function(grunt) {
         var cssFiles = filterForCSS(this.filesSrc).map(function(file) {
             return file.replace(dirRE, '');
         });
+        var app_main = this.data.main || "";
 
         grunt.file.copy('src/templates/index.html', this.data.dir + '/index.html', {
             process : function(contents, path) {
                 return grunt.template.process(contents, {
                     data : {
+                        main: app_main,
                         scripts : jsFiles,
                         styles : cssFiles,
                         version : grunt.config('pkg.version')
