@@ -50,7 +50,8 @@
     "matchdep": "^0.1.2",
     "phantomjs": "^1.9",
     "protractor": "^4.0",
-    "requirejs": "^2.3.2"
+    "requirejs": "^2.3.2",
+    "serve-static": "^1.11.1"
   },
   "scripts": {
     "install": "bower install",
