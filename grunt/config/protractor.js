@@ -5,7 +5,7 @@ module.exports = function (grunt) {
      */
     grunt.config.set('protractor', {
         options : {
-            configFile : "grunt/test/protractor-conf.js", // Default config file
+            configFile : "<%= files.base.build %>/protractor-conf.js", // Default config file
             noColor : false, // If true, protractor will not use colors in its output.
             // debug: true,
             args : {
@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         },
         e2e : {
             options : {
-                keepAlive :false // grunt process will stop when the test fails.
+                keepAlive: false //false // grunt process will stop when the test fails.
             }
         },
         continuous : {

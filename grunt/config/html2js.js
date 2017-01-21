@@ -7,15 +7,19 @@ module.exports = function (grunt) {
      * part of the initial payload as one JavaScript file. Neat!
      */
     grunt.config.set('html2js', {
+      options: {
+        amd: true,
+        useStrict: true
+      },
       /**
        * These are the templates from `src/app`.
        */
       app: {
         options: {
-          base: '<%= files.src_dir %>/app'
+          base: '<%= files.base.src %>/app'
         },
         src: [ '<%= files.app.atpl %>' ],
-        dest: '<%= files.develop_dir %>/templates-app.js'
+        dest: '<%= files.development %>/templates-app.js'
       },
 
       /**
@@ -23,10 +27,10 @@ module.exports = function (grunt) {
        */
       common: {
         options: {
-          base: '<%= files.src_dir %>/common'
+          base: '<%= files.base.src %>/common'
         },
         src: [ '<%= files.app.ctpl %>' ],
-        dest: '<%= files.develop_dir %>/templates-common.js'
+        dest: '<%= files.development %>/templates-common.js'
       }
     });
 

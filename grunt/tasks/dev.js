@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     grunt.registerTask( 'dev', [
         'clean',
         'build',
-        'test-continuous'
+        'continuous' // includes testing
     ]);
 
 };

@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-        /*
+    /*
      * A utility function to get all app JavaScript sources.
      */
     function filterForJS(files) {
@@ -16,11 +16,19 @@ module.exports = function(grunt) {
      */
     grunt.registerMultiTask('karma-conf', 'Process karma configuration template', function() {
         var jsFiles = filterForJS(this.filesSrc);
+        var base_dir = this.data.dir;
+        var reports_dir = this.data.reports;
 
-        grunt.file.copy('grunt/templates/karma-conf.js.tpl', this.data.dir + '/karma-conf.js', {
+        for(var d in this.data) {
+            grunt.log.debug(d + " :: " + this.data[d]);
+        }
+
+        grunt.file.copy('grunt/templates/karma-conf.js.tpl', base_dir + '/../karma-conf.js', {
             process : function(contents, path) {
                 return grunt.template.process(contents, {
                     data : {
+                        base: base_dir,
+                        reports: reports_dir,
                         scripts : jsFiles
                     }
                 });

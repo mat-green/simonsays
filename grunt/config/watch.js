@@ -19,7 +19,7 @@ module.exports = function(grunt) {
          */
         jssrc : {
             files : [ '<%= files.app.js %>' ],
-            tasks : ['jshint:src', 'karma:unit:run', 'ngAnnotate']
+            tasks : ['jshint:src', 'karma:unit:run']
         },
 
         /**
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
          */
         coffeesrc : {
             files : ['<%= files.app.coffee %>'],
-            tasks : ['coffeelint:src', 'coffee:source', 'karma:unit:run', 'ngAnnotate']
+            tasks : ['coffeelint:src', 'coffee:source', 'karma:unit:run']
         },
 
         /**
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
          * files, so this is probably not very useful.
          */
         assets : {
-            files : ['<%= files.src_assets_dir %>/**/*'],
+            files : ['<%= files.app.assets %>/**/*'],
             tasks : ['copy:build_app_assets', 'copy:build_vendor_assets']
         },
 
@@ -61,8 +61,8 @@ module.exports = function(grunt) {
          */
         less : {
             files : [
-                'src/app/**/*.less',
-                'src/less/**/*.less'
+                '<%= files.base.src %>/app/**/*.less',
+                '<%= files.base.src %>/less/**/*.less'
             ],
             tasks : ['less:build']
         },
@@ -85,11 +85,11 @@ module.exports = function(grunt) {
             tasks : ['coffeelint:test', 'karma:unit:run']
         },
         karma : {
-            files : ['<%= files.develop_dir %>/app/**/*.js', '<%= files.develop_dir %>/common/**/*.js', 'src/**/*.spec.js'],
+            files : ['<%= files.development %>/app/**/*.js', '<%= files.development %>/common/**/*.js', '<%= files.base.src %>/**/*.spec.js'],
             tasks : ['karma:continuous:run']
         },
         protractor : {
-            files : ['<%= files.develop_dir %>/app/**/*.js', '<%= files.develop_dir %>/common/**/*.js', 'src/scenarios/*.js'],
+            files : ['<%= files.development %>/app/**/*.js', '<%= files.development %>/common/**/*.js', '<%= files.base.src %>/scenarios/*.js'],
             tasks : ['protractor:continuous']
         }
     });

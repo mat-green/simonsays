@@ -11,18 +11,36 @@ module.exports = function(config) {
          * This is the list of file patterns to load into the browser during testing.
          */
         files : [
-            <% scripts.forEach( function ( file ) { %>'<%= file %>',
-            <% }); %>
+            {
+                pattern: '<%= base %>/app/**/*.js',
+                included: false
+            }, {
+                pattern: '<%= base %>/common/**/*.js',
+                included: false
+            }, {
+                pattern: '<%= base %>/lib/**/*.js',
+                included: false
+            }, {
+                pattern: '<%= base %>/*.js',
+                included: false
+            }, {
+                pattern: 'src/app/**/*.spec.js',
+                included: false
+            }, {
+                pattern: 'src/app/**/*.mock.js',
+                included: false
+            },
+            'src/config.test.js'
         ],
 
-        exclude : ['src/assets/**/*.js'],
+        exclude : [ 'src/app/*main.js' ],
 
         /**
          * Disable file watching by default.
          */
         autoWatch : false,
 
-        frameworks : ['jasmine'],
+        frameworks : ['jasmine', 'requirejs'],
 
         /*
          * The list of browsers to launch to test on. This includes only "PhantomJS" by
@@ -45,8 +63,8 @@ module.exports = function(config) {
             // 'app/partials/*.html': 'html2js'
 
             // test coverage
-            'build/www/app/**/*.js' : ['coverage'],
-            'build/www/common/**/*.js' : ['coverage'],
+            '<%= base %>/app/**/*.js' : ['coverage'],
+            '<%= base %>/common/**/*.js' : ['coverage'],
             '**/*.coffee' : ['coffee']
         },
 
@@ -60,7 +78,8 @@ module.exports = function(config) {
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-junit-reporter',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+            'karma-requirejs'
         ],
 
         // plugin settings
@@ -68,13 +87,13 @@ module.exports = function(config) {
             // type of file to output, use text to output to console
             type : 'cobertura',
             // directory where coverage results are saved
-            dir : 'build/reports/',
+            dir : '<%= reports %>/',
             subdir : 'coverage',
             // if type is text or text-summary, you can set the file name
             file : 'cobertura.xml'
         },
         junitReporter : {
-            outputDir : 'build/reports/tests/',
+            outputDir : '<%= reports %>/tests/',
             outputFile : 'junit.xml',
             suite : ''
         },
@@ -89,4 +108,3 @@ module.exports = function(config) {
 
     });
 };
-

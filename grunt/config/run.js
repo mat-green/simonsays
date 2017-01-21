@@ -1,12 +1,12 @@
 module.exports = function(grunt) {
 
     grunt.config.set('run', {
-        mock_server : {
+        mock_server : { // provide mock server for tests.
             options : {
                 wait : false
             },
             args : []
-            // args: ['<%= files.src_dir %>/mock/apiserver.js']
+            // args: ['<%= files.base.src %>/mock/apiserver.js']
         }
     });
 

@@ -2,9 +2,9 @@ module.exports = function (grunt) {
 
     grunt.config.set('livereload', {
         options : {
-            base : '<%= files.develop_dir %>'
+            base : '<%= files.development %>'
         },
-        files : [ '<%= files.develop_dir %>/**/*' ]
+        files : [ '<%= files.development %>/**/*' ]
     });
 
     grunt.loadNpmTasks('grunt-livereload');

@@ -32,7 +32,7 @@ src/
 
 - `src/app/` - application-specific code, i.e. code not likely to be reused in
   another application. [Read more &raquo;](app/README.md)
-- `src/assets/` - static files like fonts and images. 
+- `src/assets/` - static files like fonts and images.
   [Read more &raquo;](assets/README.md)
 - `src/common/` - third-party libraries or components likely to be reused in
   another application. [Read more &raquo;](common/README.md)
@@ -40,10 +40,10 @@ src/
 - `src/scenarios/` - [Protractor][protractor] end to end behaviour driven tests.
 - `src/index.html` - this is the HTML document of the single-page application.
   See below.
-* `src/vendor/` - third-party libraries. [Bower][bower] will install packages 
-  here. Anything added to this directory will need to be manually added to 
-  `grunt/config/app.js` and `grunt/test/karma-unit.js` to be picked up by the 
-  build system.
+* `src/vendor/` - third-party libraries. [Bower][bower] will install packages
+  here. Anything added to this directory will need to be manually added to
+  `grunt/config/app.js` and `grunt/test/karma-unit.js` to be picked up by the
+  build system. See [placeholders](https://github.com/joshdmiller/angular-placeholders) for more information.
 
 See each directory for a detailed explanation.
 

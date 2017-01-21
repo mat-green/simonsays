@@ -4,7 +4,7 @@ exports.config = {
 
   // location of E2E test specs
   specs: [
-    '../../src/scenarios/*.js'
+    '../src/scenarios/*.js'
   ],
 
   // configure multiple browsers to run tests
@@ -24,7 +24,7 @@ exports.config = {
 
 
   // url where your app is running, relative URLs are prepending with this URL
-  baseUrl: 'http://127.0.0.1:8008/',
+  baseUrl: '<%= baseUrl %>',
 
   // testing framework, jasmine is the default
   framework: 'jasmine'

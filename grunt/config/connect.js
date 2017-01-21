@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
-
+    // Get a static content server
+    var serveStatic = require('serve-static');
     /* basic web server for testing and serving single page content */
     grunt.config.set('connect', {
         options : {
@@ -10,27 +11,28 @@ module.exports = function(grunt) {
             options : {
                 // livereload : 35729, // Default port for livereload
                 open : true,
-                base : ['<%= files.develop_dir %>'],
+                base : ['<%= files.development %>'],
                 // Livereload needs connect to insert a Javascript snippet in the
                 // pages it serves. This requires using a custom connect middleware.
                 middleware : function(connect, options) {
                     return [
                         require('connect-livereload')(),
                         // Serve the project folder
-                        connect.static(options.base[0])
+                        serveStatic(options.base[0])
                     ];
                 }
             }
         },
-        preview : {
+        viewing : {
             options : {
                 open : true,
-                base : ['<%= files.compile_dir %>']
+                base : [ '<%= files.distribution %>' ],
+                keepalive: true
             }
         },
-        compile : {
+        e2e : {
             options : {
-                base : ['<%= files.compile_dir %>']
+                base : ['<%= files.distribution %>']
             }
         }
     });

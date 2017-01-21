@@ -5,6 +5,8 @@ build/
 bin/
 node_modules/
 vendor/
+lib/
+target/
 
 # Eclipse files and folders
 .project
@@ -12,4 +14,3 @@ vendor/
 
 # Mac OS X generated files and folders
 .DS_Store
-
