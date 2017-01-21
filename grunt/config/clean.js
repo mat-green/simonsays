@@ -12,7 +12,10 @@ module.exports = function (grunt) {
         ],
         packages: [
             '<%= files.base.build %>/*.tar.gz'
-        ]
+        ],
+        conf: [
+          '<%= files.base.build %>/karma-conf.js'
+        ],
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');

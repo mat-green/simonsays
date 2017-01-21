@@ -12,16 +12,16 @@ module.exports = function(config) {
          */
         files : [
             {
-                pattern: '<%= base %>app/**/*.js',
+                pattern: '<%= base %>/app/**/*.js',
                 included: false
             }, {
-                pattern: '<%= base %>common/**/*.js',
+                pattern: '<%= base %>/common/**/*.js',
                 included: false
             }, {
-                pattern: '<%= base %>lib/**/*.js',
+                pattern: '<%= base %>/lib/**/*.js',
                 included: false
             }, {
-                pattern: '<%= base %>*.js',
+                pattern: '<%= base %>/*.js',
                 included: false
             }, {
                 pattern: 'src/app/**/*.spec.js',
@@ -63,8 +63,8 @@ module.exports = function(config) {
             // 'app/partials/*.html': 'html2js'
 
             // test coverage
-            '<%= base %>app/**/*.js' : ['coverage'],
-            '<%= base %>common/**/*.js' : ['coverage'],
+            '<%= base %>/app/**/*.js' : ['coverage'],
+            '<%= base %>/common/**/*.js' : ['coverage'],
             '**/*.coffee' : ['coffee']
         },
 

@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     grunt.registerTask( 'test', [
         'karma-conf:compile',
         'karma:unit:start',
-        'connect:compile',
+        'connect:e2e',
         'run:mock_server',
         'protractor-conf:e2e',
         'protractor:e2e'

@@ -60,7 +60,7 @@
     "pretest": "npm install",
     "test": "grunt --verbose --debug build test",
     "previewing": "npm install",
-    "viewing": "gruntstage",
+    "viewing": "grunt stage",
     "prepackage": "npm install",
     "package": "grunt prod"
   }

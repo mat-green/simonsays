@@ -5,7 +5,7 @@ module.exports = function(grunt) {
      */
     grunt.config.set('karma', {
         options : {
-            configFile : '<%= files.build_dir %>/karma-conf.js'
+            configFile : '<%= files.base.build %>/karma-conf.js'
         },
         unit : {
             options : {

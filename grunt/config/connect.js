@@ -26,11 +26,11 @@ module.exports = function(grunt) {
         viewing : {
             options : {
                 open : true,
-                base : ['<%= files.distribution %>'],
+                base : [ '<%= files.distribution %>' ],
                 keepalive: true
             }
         },
-        compile : {
+        e2e : {
             options : {
                 base : ['<%= files.distribution %>']
             }

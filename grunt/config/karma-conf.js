@@ -8,8 +8,8 @@ module.exports = function (grunt) {
 
     grunt.config.set('karma-conf', {
       continuous: {
-        dir: '<%= files.base.build %>',
-        reports: '<%= files.app.reports %>',
+        dir: '<%= files.development %>',
+        reports: '<%= files.reports %>',
         src: [
         //   files.vendor.js.map(function(value) { return value.lib; }),
         //   files.vendor.require,
@@ -21,8 +21,8 @@ module.exports = function (grunt) {
         ]
       },
       compile: {
-        dir: '<%= files.base.build %>',
-        reports: '<%= files.app.reports %>',
+        dir: '<%= files.development %>',
+        reports: '<%= files.reports %>',
         src: [
         //   '<%= concat.compile_js.dest %>',
         //   '<%= files.test.js %>',
