@@ -4,6 +4,7 @@ module.exports = function (grunt) {
      * The `test-continuous` task continuously testing your application.
      */
     grunt.registerTask( 'continuous', [
+        'copy:test_js',
         'karma-conf:continuous',
         'karma:continuous:start',
         'livereload',

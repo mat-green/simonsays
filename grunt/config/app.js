@@ -66,7 +66,7 @@ module.exports = function(grunt) {
          * This is a collection of files used during testing only.
          */
         test: {
-            js : [ '<%= files.base.src %>/lib/angular-mocks/angular-mocks.js' ]
+          js : [ '<%= files.base.src %>/lib/angular-mocks/angular-mocks.js' ]
         },
         /*
          * This is the same as `files.app`, except it contains patterns that
@@ -107,8 +107,7 @@ module.exports = function(grunt) {
                 { lib: '<%= files.base.src %>/lib/angular-segmentio/angular-segmentio.js' },
                 { lib: '<%= files.base.src %>/lib/angular-ui-router/release/angular-ui-router.js' },
                 { lib: '<%= files.base.src %>/lib/domReady/domReady.js' },
-                { lib: '<%= files.base.src %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.js' },
-                { lib: '<%= files.base.src %>/lib/angular-mocks/angular-mocks.js' }
+                { lib: '<%= files.base.src %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.js' }
             ],
             css : [],
             fonts : [],

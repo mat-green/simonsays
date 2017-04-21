@@ -91,6 +91,16 @@ module.exports = function (grunt) {
           }
         ]
       },
+      test_js: {
+        files: [
+            {
+                src: strip_src(files.test.js),
+                dest: '<%= files.development %>',
+                cwd: '<%= files.base.src %>',
+                expand: true
+            }
+        ]
+      },
       compile_assets: {
         files: [
           {
