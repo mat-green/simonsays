@@ -1,0 +1,8 @@
+Simonsays Brief
+================================================================================
+
+Create a simonsays memory game made up of four squares (Red, Green, Yellow, Blue) that uses the `src/assets/data.json` file to determine sequences to play. The game should play each sequence to player. Giving the player a chance to re-enter the sequence. When the player fails all four squares should flash and replay the sequence.
+
+The number of sequences given in the data file can be any.
+
+Please provide unit and user acceptance tests.
