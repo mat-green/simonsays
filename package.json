@@ -1,18 +1,19 @@
 {
   "author": "Matthew Green",
-  "name": "yet-another-angularjs-seed",
+  "name": "simonsays",
   "version": "0.0.0",
-  "homepage": "https://github.com/New-Edge-Engineering/yet-another-angularjs-seed",
+  "homepage": "https://github.com/mat-green/simonsays",
   "license": "MIT",
   "license_url": "https://opensource.org/licenses/MIT",
-  "bugs": "https://github.com/New-Edge-Engineering/yet-another-angularjs-seed/issues",
+  "bugs": "https://github.com/mat-green/simonsays/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:New-Edge-Engineering/yet-another-angularjs-seed.git"
+    "url": "git@github.com:mat-green/simonsays.git"
   },
   "dependencies": {},
   "devDependencies": {
     "connect-livereload": "0.6.0",
+    "connect-modrewrite": "^0.10.1",
     "grunt": "^0.4.1",
     "grunt-angular-templates": "^0.5.4",
     "grunt-coffeelint": "^0.0.10",

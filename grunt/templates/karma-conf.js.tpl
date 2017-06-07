@@ -5,7 +5,7 @@ module.exports = function(config) {
          */
         basePath : '../',
 
-        logLevel : config.LOG_INFO,
+        logLevel : config.LOG_DEBUG,
 
         /**
          * This is the list of file patterns to load into the browser during testing.
@@ -68,7 +68,7 @@ module.exports = function(config) {
             '**/*.coffee' : ['coffee']
         },
 
-        reporters : ['dots', 'progress', 'junit', 'coverage'],
+        reporters : ['dots', 'progress', 'coverage'],
 
         // list of karma plugins
         plugins : [

@@ -12,7 +12,7 @@ define([
  * build process will exclude all `.spec.js` files from the build
  * automatically.
  */
-    describe( 'home section', function() {
+    describe( 'play section', function() {
         beforeEach( angular.mock.module( require('app/app.module') ) );
 
         beforeEach(angular.mock.inject(function($rootScope){

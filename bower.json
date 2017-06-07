@@ -1,17 +1,18 @@
 {
-  "name": "yet-another-angularjs-seed",
-  "version": "0.0.0",
+  "name": "simonsays",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
-    "angular": "~1.4",
-    "angular-mocks": "~1.4",
+    "angular": "~1.6",
     "angular-bootstrap": "~1.2",
+    "angular-mocks": "~1.6",
     "angular-placeholders": "*",
+    "angular-resource": "~1.6",
     "angular-ui-router": "~0.3",
     "bootstrap": "~3.3",
     "requirejs": "^2.3.2"
   },
   "resolutions": {
-    "angular": "~1.4"
+    "angular": "~1.6"
   }
 }

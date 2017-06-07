@@ -1,7 +1,7 @@
 /**
  * Each section of the site has its own module. It probably also has
  * submodules, though this boilerplate is too simple to demonstrate it. Within
- * `src/app/home`, however, could exist several additional folders representing
+ * `src/app/play`, however, could exist several additional folders representing
  * additional modules that would then be listed as dependencies of this one.
  * For example, a `note` section could have the submodules `note.create`,
  * `note.delete`, `note.edit`, etc.
@@ -15,17 +15,19 @@
 define([
    'require',
    'angular',
+   'angular-resource',
    // Application
-   'app/home/home.config',
-   'app/home/home.controller',
-   'common/plusOne/plusOne.module'
+   'app/play/play.config',
+   'app/play/play.controller',
+   'app/play/play.factory.resolver'
 ],
 function(require, angular){
   return angular
-    .module( 'ngBoilerplate.home', [
+    .module( 'simonsays.play', [
       'ui.router',
-      'plusOne'
+      'ngResource'
     ])
-    .config(require('app/home/home.config'))
-    .controller( 'HomeCtrl', require('app/home/home.controller'));
+    .config(require('app/play/play.config'))
+    .controller('PlayCtrl', require('app/play/play.controller'))
+    .factory('Play', require('app/play/play.factory.resolver'));
 });

@@ -4,17 +4,17 @@ define([], function(){
  * will handle ensuring they are all available at run-time, but splitting it
  * this way makes each module more "self-contained".
  */
-  var HomeConfig = function( $stateProvider ) {
-    $stateProvider.state( 'home', {
-      url: '/home',
+  var PlayConfig = function( $stateProvider ) {
+    $stateProvider.state( 'play', {
+      url: '/play',
       views: {
         "main": {
-          controller: 'HomeCtrl',
-          templateUrl: 'home/home.tpl.html'
+          controller: 'PlayCtrl',
+          templateUrl: 'play/play.tpl.html'
         }
       },
-      data:{ pageTitle: 'Home' }
+      data:{ pageTitle: 'Play' }
     });
   };
-  return ['$stateProvider', HomeConfig];
+  return ['$stateProvider', PlayConfig];
 });

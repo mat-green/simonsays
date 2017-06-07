@@ -8,16 +8,14 @@ define([
   'templates-common',
   'app/app.config',
   'app/app.controller',
-  'app/home/home.module',
-  'app/about/about.module'
+  'app/play/play.module'
 ],
 function(require, angular){
   return angular
-    .module('ngBoilerplate', [
+    .module('simonsays', [
       'templates-app',
       'templates-common',
-      'ngBoilerplate.home',
-      'ngBoilerplate.about',
+      'simonsays.play',
       'ui.router'
     ])
     .config(require('app/app.config'))

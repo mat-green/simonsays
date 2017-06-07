@@ -104,10 +104,11 @@ module.exports = function(grunt) {
             js : [
                 { lib: '<%= files.base.src %>/lib/angular/angular.js' },
                 { lib: '<%= files.base.src %>/lib/angular-bootstrap/ui-bootstrap-tpls.min.js' },
+                { lib: '<%= files.base.src %>/lib/angular-resource/angular-resource.js' }, 
                 { lib: '<%= files.base.src %>/lib/angular-segmentio/angular-segmentio.js' },
                 { lib: '<%= files.base.src %>/lib/angular-ui-router/release/angular-ui-router.js' },
                 { lib: '<%= files.base.src %>/lib/domReady/domReady.js' },
-                { lib: '<%= files.base.src %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.js' }
+                { lib: '<%= files.base.src %>/lib/angular-placeholders/dist/placeholders-0.0.1-SNAPSHOT.min.js' }
             ],
             css : [],
             fonts : [],

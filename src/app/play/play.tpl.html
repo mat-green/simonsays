@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1>Simon Says:</h1>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 well"><span class="box large {{colour}}"></span></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 well">
+      <div class="row">
+        <div class="span3"><span class="box small red" ng-click="selected($event)"></span><span class="box small green" ng-click="selected($event)"></span></div>
+        <div class="span3"><span class="box small blue" ng-click="selected($event)"></span><span class="box small yellow" ng-click="selected($event)"></span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <button class="btn btn-primary" data-ng-click="play()" data-ng-if="playing == false">Play</button>
+        <button class="btn btn-primary" data-ng-click="reset()" data-ng-if="playing == true">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
