@@ -1,0 +1,14 @@
+/* TEAM */
+Founder: Matthew Green
+Site: http://www.newedgeengineering.com/
+Twitter: @newedgeengineer
+Location: London
+
+/* THANKS */
+
+
+/* Site */
+Last updated: YYYY/MM/DD
+Standards: HTML5, CSS3
+Components: AngularJS, Bootstrap
+Software: node.js, bower.io, grunt.org
