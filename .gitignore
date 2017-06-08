@@ -1,2 +1,6 @@
-# eclipse ide files
+# eclipse generated files and folders
 .project
+
+# Webpack generated files and folders
+target
+node_modules

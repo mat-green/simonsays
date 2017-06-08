@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-controller="AppCtrl">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title ng-bind="pageTitle">VueJS Simon Says</title>
+
+        <!-- social media tags -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@newedgeengineer" />
+        <meta name="twitter:title" content="simon says" />
+        <meta name="twitter:description" content="Memory Games" />
+        <meta name="twitter:creator" content="@joshdmiller" />
+        <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+        <meta property="og:title" content="simon says" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
+        <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+        <meta property="og:description" content="Memory Games">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Memory Games">
+        <!-- Place favicon.ico (with ? to ensure firefox pick this up) and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico?">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- font awesome from BootstrapCDN -->
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+
+        <!-- compiled CSS -->
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="container" id="simonsays">
+            <div class="jumbotron">
+              <h1>Simon Says:</h1>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 well"><span class="box large" v-bind:class="[glowing == 'large' ? 'glow' : '', colour]">{{ result }}</span></div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 well">
+                  <div class="row">
+                    <div class="span3"><span class="box small red" v-on:click="selected($event)" v-bind:class="[glowing == 'red' ? 'glow' : '']"></span><span class="box small green" v-on:click="selected($event)" v-bind:class="[glowing == 'green' ? 'glow' : '']"></span></div>
+                    <div class="span3"><span class="box small blue" v-on:click="selected($event)" v-bind:class="[glowing == 'blue' ? 'glow' : '']"></span><span class="box small yellow" v-on:click="selected($event)" v-bind:class="[glowing == 'yellow' ? 'glow' : '']"></span></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <button class="btn btn-primary" v-on:click="start()" v-if="playing == false">Play</button>
+                    <button class="btn btn-primary" v-on:click="reset()" v-if="playing == true">Reset</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <ul class="social">
+                        <li>
+                            <a target="_blank" href="https://www.google.com/+NewedgeengineeringLimited"><i class="fa fa-google-plus-sign"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://twitter.com/newedgeengineer"><i class="fa fa-twitter-sign"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.linkedin.com/company/new-edge-engineering-ltd"><i class="fa fa-linkedin-sign"></i></a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/New-Edge-Engineering/simon says"><i class="fa fa-github-sign"></i></a>
+                        </li>
+                    </ul>
+
+                    <p>
+                        (c) 2015 <a href="http://www.newedgeengineering.com">New EdgeEngineering Ltd</a>. <a href="https://github.com/New-Edge-Engineering/simon says/fork_select">Fork this</a>
+                        to kickstart your next project.
+                        <br />
+                        This kickstarter is based on
+                        <a href="http://www.angularjs.org">AngularJS</a>, <a href="http://getbootstrap.com">Bootstrap</a>, <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
+                        and
+                        <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- load JavaScript via AMD pattern -->
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    </body>
+</html>
